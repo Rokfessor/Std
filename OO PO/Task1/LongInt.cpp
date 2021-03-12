@@ -107,11 +107,12 @@ LongInt LongInt::operator-(const LongInt &num) const {
 
     for (int i = 0; i < max.length(); i++) {
         int a = static_cast<int>(max[maxInd]) - 48;
-s
+
         if (minInd != -1) {
             int b = static_cast<int>(min[minInd]) - 48;
             int c;
-            if (a - b < 0) { //Если число меньше, то занимаем у следующего ненулевого! разряда (100000000000 - 1 никто не отменял)
+            if (a - b <
+                0) { //Если число меньше, то занимаем у следующего ненулевого! разряда (100000000000 - 1 никто не отменял)
                 for (int j = maxInd - 1; j >= 0; j--) {
                     if (max[j] == '0')
                         max[j] = (static_cast<int>(9)) + '0';
@@ -163,7 +164,7 @@ LongInt LongInt::operator*(const LongInt &num) const {
     }
 
     LongInt numb(0);
-    for (LongInt i(1); i < LongInt(n2); i = i.operator+(LongInt(1))) { //Суммируем n раз ¯\_(ツ)_/¯
+    for (LongInt i(1); i < LongInt(n2); ++i) { //Суммируем n раз ¯\_(ツ)_/¯
         numb = LongInt(n1) + LongInt(numb);
     }
 
@@ -188,7 +189,7 @@ LongInt LongInt::operator/(const LongInt &num) const {
 
     LongInt res(1);
     while (this->operator>=(res * num)) {
-        res = res + LongInt(1); //Суммируем, пока не упремся в число, либо перепрыгнем его
+        ++res; //Суммируем, пока не упремся в число, либо перепрыгнем его
         //Можно было и вычитать
     }
 
@@ -242,4 +243,23 @@ bool LongInt::operator<=(const LongInt &num) const {
 
 bool LongInt::operator!=(const LongInt &num) const {
     return !operator==(num);
+}
+
+ostream &operator<<(ostream &out, const LongInt &number) {
+    out << number.number;
+    return out;
+}
+
+const LongInt& operator++(LongInt &i) {
+    i = i.operator+(LongInt(1));
+    return i;
+}
+
+LongInt& LongInt::operator=(const LongInt &i) {
+    if (this == &i) {
+        return *this;
+    }
+
+    number.assign(i.number);
+    return *this;
 }

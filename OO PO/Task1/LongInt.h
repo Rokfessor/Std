@@ -16,21 +16,41 @@ public:
 
 public :
     explicit LongInt(string num);
-    explicit LongInt(int num);
-    explicit LongInt();
-    LongInt operator+(const LongInt& num) const;
-    LongInt operator-(const LongInt& num) const;
-    LongInt operator*(const LongInt& num) const;
-    LongInt operator*(const int& num) const;
-    LongInt operator/(const LongInt& num) const;
-    LongInt operator%(const LongInt& num) const;
 
-    bool operator>(const LongInt& num) const;
-    bool operator>=(const LongInt& num) const;
-    bool operator<(const LongInt& num) const;
-    bool operator<=(const LongInt& num) const;
-    bool operator==(const LongInt& num) const;
-    bool operator!=(const LongInt& num) const;
+    explicit LongInt(int num);
+
+    explicit LongInt();
+
+    LongInt operator+(const LongInt &num) const;
+
+    LongInt operator-(const LongInt &num) const;
+
+    LongInt operator*(const LongInt &num) const;
+
+    LongInt operator*(const int &num) const;
+
+    LongInt operator/(const LongInt &num) const;
+
+    LongInt operator%(const LongInt &num) const;
+
+    LongInt &operator=(const LongInt &v);
+
+    bool operator>(const LongInt &num) const;
+
+    bool operator>=(const LongInt &num) const;
+
+    bool operator<(const LongInt &num) const;
+
+    bool operator<=(const LongInt &num) const;
+
+    bool operator==(const LongInt &num) const;
+
+    bool operator!=(const LongInt &num) const;
+
+    friend ostream &operator<<(ostream &out, const LongInt &num);
+
+    friend const LongInt& operator++(LongInt &num);
+
 
 };
 
