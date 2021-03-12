@@ -1,6 +1,6 @@
-package Task1;
+package Task1.Procedure;
 
-import Task1.GUI.Window;
+import Task1.Procedure.GUI.Window;
 
 import javax.swing.*;
 import java.awt.*;
