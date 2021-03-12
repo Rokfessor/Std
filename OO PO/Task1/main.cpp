@@ -11,7 +11,7 @@ int main() {
         LongInt n1(rand());
         LongInt n2(rand());
 
-        cout << n1
+        //Тут тесты нада
     }
 
     return 0;
