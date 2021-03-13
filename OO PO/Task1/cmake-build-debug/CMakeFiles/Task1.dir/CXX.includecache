@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Oladushek/Desktop/Std/OO PO/Task1/LongInt.cpp
+LongInt.h
+C:/Users/Oladushek/Desktop/Std/OO PO/Task1/LongInt.h
+
 C:/Users/Oladushek/Desktop/Std/OO PO/Task1/LongInt.h
 string
 -
@@ -19,8 +23,4 @@ cstdlib
 -
 bits/stdc++.h
 -
-
-C:/Users/Oladushek/Desktop/Std/OO PO/Task1/main.cpp
-LongInt.h
-C:/Users/Oladushek/Desktop/Std/OO PO/Task1/LongInt.h
 

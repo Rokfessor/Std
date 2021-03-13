@@ -51,12 +51,20 @@ public class Window extends Container {
                 Clock.alarmH = (Clock.alarmH + 1) % 24;
                 clockView.setValues(Clock.alarmH, Clock.alarmM);
             }
+            if (Clock.state == ClockState.ON) {
+                Clock.H = (Clock.H + 1) % 24;
+                clockView.setValues(Clock.H, Clock.M);
+            }
         });
 
         mButton.addActionListener(e -> {
             if (Clock.state == ClockState.ALARM_SET) {
                 Clock.alarmM = (Clock.alarmM + 1) % 60;
                 clockView.setValues(Clock.alarmH, Clock.alarmM);
+            }
+            if (Clock.state == ClockState.ON) {
+                Clock.M = (Clock.M + 1) % 60;
+                clockView.setValues(Clock.H, Clock.M);
             }
         });
     }

@@ -75,12 +75,18 @@ public class Clock implements ActionListener {
 
     private void alarmButtonsAction(String type) {
         if (Clock.state == ClockState.ALARM_SET) {
-            System.err.println(type);
             if (type.equals("H"))
                 alarmH = (alarmH + 1) % 24;
             else
                 alarmM = (alarmM + 1) % 60;
             clockListener.setAlarmValues();
+        }
+        if (Clock.state == ClockState.ON) {
+            if (type.equals("H"))
+                H = (H + 1) % 24;
+            else
+                M = (M + 1) % 60;
+            clockListener.setClockValues();
         }
     }
 }

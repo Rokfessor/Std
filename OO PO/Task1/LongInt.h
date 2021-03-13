@@ -49,9 +49,9 @@ public :
 
     friend ostream &operator<<(ostream &out, const LongInt &num);
 
-    friend const LongInt& operator++(LongInt &num);
+    friend const LongInt &operator++(LongInt &num);
 
-
+    static LongInt abs(LongInt num);
 };
 
 #endif //TASK1_LONGINT_H
