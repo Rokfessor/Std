@@ -22,6 +22,7 @@ public class Window extends Container {
 
         ClockView clockView = new ClockView();
         clockView.setAlignmentX(Component.CENTER_ALIGNMENT);
+        clockView.setForeground(Color.RED);
 
         add(clockView);
         add(buttonPanel);
@@ -30,17 +31,17 @@ public class Window extends Container {
             switch (Clock.state) {
                 case ON -> {
                     Clock.state = ClockState.OFF;
-                    clockView.setForeground(Color.LIGHT_GRAY);
+                    clockView.setForeground(Color.RED);
                     Clock.M = 0;
                     Clock.H = 0;
                 }
                 case OFF -> {
                     Clock.state = ClockState.ALARM_SET;
-                    clockView.setForeground(Color.DARK_GRAY);
+                    clockView.setForeground(Color.BLUE);
                 }
                 case ALARM_SET -> {
                     Clock.state = ClockState.ON;
-                    clockView.setForeground(Color.BLACK);
+                    clockView.setForeground(Color.GREEN);
                     new ClockThread(clockView).start();
                 }
             }

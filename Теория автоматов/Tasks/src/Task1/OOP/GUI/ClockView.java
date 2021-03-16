@@ -16,9 +16,9 @@ public class ClockView extends JLabel implements ClockListener {
     @Override
     public void clockStateChanged(ClockState state) {
         switch (state) {
-            case ON -> setForeground(Color.BLACK);
-            case OFF -> setForeground(Color.LIGHT_GRAY);
-            case ALARM_SET -> setForeground(Color.DARK_GRAY);
+            case ON -> setForeground(Color.GREEN);
+            case OFF -> setForeground(Color.RED);
+            case ALARM_SET -> setForeground(Color.BLUE);
         }
     }
 

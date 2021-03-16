@@ -22,6 +22,7 @@ public class Window extends Container {
 
         ClockView clockView = new ClockView();
         clockView.setAlignmentX(Component.CENTER_ALIGNMENT);
+        clockView.setForeground(Color.RED);
 
         Clock clock = new Clock();
         clock.setClockListener(clockView);
