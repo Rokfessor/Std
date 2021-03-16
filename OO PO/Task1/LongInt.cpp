@@ -13,53 +13,46 @@ LongInt::LongInt() {
 }
 
 LongInt LongInt::operator+(const LongInt &num) const {
-    //cout << number << " + " << num.number << " = ";
-    //Вычисялем как в столбик
     if (number.at(0) == '-' && num.number.at(0) != '-')
-        return num.operator+(*this); //Проверка на вшивость
+        return num.operator+(*this); //Проверка
     if (number.at(0) != '-' && num.number.at(0) == '-')
         return operator-(num * -1);
 
-    stringstream ss; //Поток записи результата
-    string max = number, min = num.number; //Потом пригодится
-    bool flag = false; //Для суммы отрицательных чисел
+    stringstream ss;
+    string max = number, min = num.number;
+    bool flag = false;
 
-    //Убираем минусики, если числа отрицательные
     if (max.at(0) == '-' && min.at(0) == '-') {
         max.erase(0, 1); //erase(позиция, число символов)
         min.erase(0, 1);
         flag = true;
     }
 
-    //Ищем наименьшее число (по числу цифр, а не значению!)
     if (LongInt::abs(*this) < LongInt::abs(num)) {
         string tmp = max;
         max = min;
         min = tmp;
     }
 
-    int ost = 0; // остаток
-    //Типа числа записываются слева направо и если мы возьмем 0 индекс, то получим 1 цифу числа, а нужна последняя
-    int maxInd = max.length() - 1, minInd = min.length() - 1; //Поэтому высчитываем эту херь
+    int ost = 0;
+    int maxInd = max.length() - 1, minInd = min.length() - 1;
 
-    for (int i = 0; i < max.length(); i++) { //Херачим, пока большее число не кончится
+    for (int i = 0; i < max.length(); i++) {
 
-        int a = static_cast<int>(max[maxInd]) - 48; //Получаем цифру большего числа
+        int a = static_cast<int>(max[maxInd]) - 48;
 
-        if (minInd != -1) { //Херачим, пока меньшее число не кончится
-            //Получаем цифру меньшего числа
+        if (minInd != -1) {
             int b = static_cast<int>(min[minInd]) - 48;
-            //Суммируем числа с учетом остатка от прошлой суммы
             int c = a + b + ost;
-            ost = 0; //Убираем остаток
-            if (c >= 10) { //И считаем его снова
+            ost = 0;
+            if (c >= 10) {
                 c -= 10;
                 ost++;
             }
-            ss << c; //Пишем в поток результат
-            minInd--; //Идем к следующей цифре меньшего числа (справа налево)
-        } else { //Тоже самое, только с оставшимися разрядами большего числа
-            int c = a + ost; //Никто не отменял 9999999999+1, поэтому тут тоже нужно считать остаток
+            ss << c;
+            minInd--;
+        } else {
+            int c = a + ost;
             ost = 0;
             if (c >= 10) {
                 c -= 10;
@@ -67,17 +60,17 @@ LongInt LongInt::operator+(const LongInt &num) const {
             }
             ss << c;
         }
-        maxInd--; //Идем к следующей цифре большего числа (справа налево)
+        maxInd--;
     }
 
-    if (ost == 1) //Если есть еще остаточек - добавляем
+    if (ost == 1)
         ss << 1;
 
-    string ans = ss.str(); //stringstream пишет в формате стека, поэтому строку нужно
-    reverse(ans.begin(), ans.end()); //реверснуть
+    string ans = ss.str();
+    reverse(ans.begin(), ans.end());
 
     int k = 0;
-    for (char an : ans) { //Если лишние нолики впереди остались
+    for (char an : ans) {
         if (an != '0')
             break;
         else
@@ -90,16 +83,13 @@ LongInt LongInt::operator+(const LongInt &num) const {
         flag = false;
     }
 
-    if (flag) //Если была сумма 2 отрицательных чисел
+    if (flag)
         ans.insert(0, "-");
 
     return LongInt(ans);
 }
 
 LongInt LongInt::operator-(const LongInt &num) const {
-    //cout << number << " - " << num.number << " = ";
-    //Вычисялем как в столбик
-    //По сути тоже самое, только в цикле нужно следующий разряд не увеличить на 1, за уменьшить(занять)
     if (number.at(0) == '-' && num.number.at(0) == '-')
         return operator+(num * -1);
     if (number.at(0) == '-' && num.number.at(0) != '-')
@@ -107,11 +97,10 @@ LongInt LongInt::operator-(const LongInt &num) const {
     if (number.at(0) != '-' && num.number.at(0) == '-')
         return operator+(num * -1);
 
-    stringstream ss; //Поток записи результата
-    string max = number, min = num.number; //Потом пригодится
-    bool flag = false; //Для того, чтобы грамотно - поставить
+    stringstream ss;
+    string max = number, min = num.number;
+    bool flag = false;
 
-    //Убираем минусики, если числа отрицательные
     if (max.at(0) == '-')
         max.erase(0, 1);
     if (min.at(0) == '-')
@@ -133,7 +122,7 @@ LongInt LongInt::operator-(const LongInt &num) const {
         if (minInd != -1) {
             int b = static_cast<int>(min[minInd]) - 48;
             int c;
-            if (a - b < 0) { //Если число меньше, то занимаем у следующего ненулевого! разряда (100000000000 - 1 никто не отменял)
+            if (a - b < 0) {
                 for (int j = maxInd - 1; j >= 0; j--) {
                     if (max[j] == '0')
                         max[j] = (static_cast<int>(9)) + '0';
@@ -153,11 +142,11 @@ LongInt LongInt::operator-(const LongInt &num) const {
         maxInd--;
     }
 
-    string ans = ss.str(); //stringstream пишет в формате стека, поэтому строку нужно
-    reverse(ans.begin(), ans.end()); //реверснуть
+    string ans = ss.str();
+    reverse(ans.begin(), ans.end());
 
     int k = 0;
-    for (char an : ans) { //Если лишние нолики впереди остались
+    for (char an : ans) {
         if (an != '0')
             break;
         else
@@ -170,14 +159,14 @@ LongInt LongInt::operator-(const LongInt &num) const {
         flag = false;
     }
 
-    if (flag) //Если была сумма 2 отрицательных чисел
+    if (flag)
         ans.insert(0, "-");
 
     return LongInt(ans);
 }
 
 LongInt LongInt::operator*(const LongInt &num) const {
-    if (num.number == "0")
+    if (num == LongInt(0) || *this == LongInt(0))
         return LongInt(0);
 
     string n1 = number, n2 = num.number;
@@ -193,8 +182,8 @@ LongInt LongInt::operator*(const LongInt &num) const {
     }
 
     LongInt numb(n1);
-    for (LongInt i(1); i < LongInt(n2); ++i) { //Суммируем n раз ¯\_(ツ)_/¯
-        numb = LongInt(n1) + LongInt(numb);
+    for (LongInt i(1); i < LongInt(n2); ++i) {
+        numb = LongInt(n1) + numb;
     }
 
     if (flag)
@@ -232,8 +221,8 @@ LongInt LongInt::operator/(const LongInt &num) const {
 
     LongInt res(1);
     while (tmp1 >= (res * tmp2)) {
-        ++res; //Суммируем, пока не упремся в число, либо перепрыгнем его
-        //Можно было и вычитать
+        ++res;
+
     }
 
     return (res - LongInt(1)) * flag;
@@ -272,7 +261,7 @@ bool LongInt::operator>(const LongInt &num) const {
         return !flag;
 
 
-    for (int i = 0; i < n1.length(); i++) { // Сравниваем по разрядам (от большего к меньшему)
+    for (int i = 0; i < n1.length(); i++) {
         if (static_cast<int>(n1[i]) > static_cast<int>(n2[i]))
             return (flag);
         else if (static_cast<int>(n1[i]) < static_cast<int>(n2[i]))
@@ -318,7 +307,7 @@ bool LongInt::operator<(const LongInt &num) const {
         return !flag;
 
 
-    for (int i = 0; i < n1.length(); i++) { // Сравниваем по разрядам (от большего к меньшему)
+    for (int i = 0; i < n1.length(); i++) {
         if (static_cast<int>(n1[i]) > static_cast<int>(n2[i]))
             return (flag);
         else if (static_cast<int>(n1[i]) < static_cast<int>(n2[i]))
@@ -360,6 +349,3 @@ LongInt LongInt::abs(LongInt num) {
     return num;
 }
 
-bool LongInt::isPositive(LongInt num) {
-    return num.number.at(0) == '-';
-}
