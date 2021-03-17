@@ -13,13 +13,13 @@ public class CalcWithThread {
 
         for (int i = 0; i < N; i++) {
             double finalStart = start;
-            MyThreadRect thread = new MyThreadRect(finalStart, finalStart + step, st);
+            MyThreadRect thread;
 
-            /*if (i != N - 1) {
-                threads.add(new MyThreadRect(finalStart, finalStart + step, st));
+            if (i != N - 1) {
+                thread = new MyThreadRect(finalStart, finalStart + step, st);
             } else {
-                threads.add(new MyThreadRect(finalStart, finalStart + step, n - (st * N)));
-            }*/
+                thread = new MyThreadRect(finalStart, finalStart + step, n - (st * (N - 1)));
+            }
 
             start += step;
             threads.add(thread);

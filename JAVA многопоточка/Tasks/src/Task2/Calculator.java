@@ -46,6 +46,6 @@ public class Calculator {
     }
 
     private static double calcFunc(double x) {
-        return Math.pow(Math.tan(x), 2) + Math.pow(1 / Math.tan(x), 2);
+        return Math.pow(Math.tan(x), 2) + Math.pow(1. / Math.tan(x), 2);
     }
 }
