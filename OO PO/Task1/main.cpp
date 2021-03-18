@@ -13,6 +13,7 @@ int main() {
     cout << a << " - " << b << " = " << a - b << endl;
     cout << a << " * " << b << " = " << a * b << endl;
     cout << a << " / " << b << " = " << a / b << endl;
+    cout << a << " % " << b << " = " << a % b << endl;
 
     /*for (int i = 0; i < 50; i++) {
 

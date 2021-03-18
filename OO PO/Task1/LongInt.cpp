@@ -78,7 +78,7 @@ LongInt LongInt::operator+(const LongInt &num) const {
     }
     ans.erase(0, k);
 
-    if (ans.length() == 0){
+    if (ans.length() == 0) {
         ans.append(1, '0');
         flag = false;
     }
@@ -154,7 +154,7 @@ LongInt LongInt::operator-(const LongInt &num) const {
     }
     ans.erase(0, k);
 
-    if (ans.length() == 0){
+    if (ans.length() == 0) {
         ans.append(1, '0');
         flag = false;
     }
@@ -181,6 +181,59 @@ LongInt LongInt::operator*(const LongInt &num) const {
         n2.erase(0, 1);
     }
 
+    if (n1.length() > n2.length()) // делаем n2 большим по длинне
+        n1.swap(n2);
+
+    string res = "0";
+    for (int i = n1.length() - 1; i >= 0; --i) // обратный проход по меньшему
+    {
+        string temp = n2; // временное = большему
+        int currentDigit = n1[i] - '0'; // текуший разряд меньшего
+        int carry = 0;
+
+        for (int j = temp.length() - 1; j >= 0; --j) // обратный проход по временному
+        {
+            temp[j] = ((temp[j] - '0') * currentDigit) + carry; // произведение текущих символов плюс остаток
+
+            if (temp[j] > 9) // вычисление нового остатка
+            {
+                carry = (temp[j] / 10);
+                temp[j] -= (carry * 10);
+            } else
+                carry = 0;
+
+            temp[j] += '0'; // возвращение к цифрам
+        }
+
+        if (carry > 0) // выделение места под новый разряд
+            temp.insert(0, 1, (carry + '0'));
+
+        temp.append((n1.length() - i - 1), '0'); // смещение на разряд
+        res = (LongInt(res) + LongInt(temp)).number; // суммирование всех поразрядных произведений
+    }
+
+    while (res[0] == '0' && res.length() != 1) // удаление незначащих нулей
+        res.erase(0, 1);
+
+    if (flag)
+        return LongInt(string("-").append(res));
+
+    return LongInt(res);
+    /*if (num == LongInt(0) || *this == LongInt(0))
+        return LongInt(0);
+
+    string n1 = number, n2 = num.number;
+    bool flag = false;
+
+    if (n1[0] == '-') {
+        flag = !flag;
+        n1.erase(0, 1);
+    }
+    if (n2[0] == '-') {
+        flag = !flag;
+        n2.erase(0, 1);
+    }
+
     LongInt numb(n1);
     for (LongInt i(1); i < LongInt(n2); ++i) {
         numb = LongInt(n1) + numb;
@@ -189,7 +242,7 @@ LongInt LongInt::operator*(const LongInt &num) const {
     if (flag)
         return LongInt(string("-").append(numb.number));
 
-    return numb;
+    return numb;*/
 }
 
 LongInt LongInt::operator*(const int &num) const {
@@ -237,7 +290,7 @@ LongInt LongInt::operator%(const LongInt &num) const {
     if (LongInt::abs((const LongInt &) *this) < LongInt::abs(num))
         return *this;
 
-    return ( *this - (num * (*this/num)));
+    return (*this - (num * (*this / num)));
 }
 
 bool LongInt::operator>(const LongInt &num) const {
@@ -345,7 +398,7 @@ LongInt &LongInt::operator=(const LongInt &i) {
 
 LongInt LongInt::abs(LongInt num) {
     if (num.number[0] == '-')
-        return LongInt(num.number.erase(0,1));
+        return LongInt(num.number.erase(0, 1));
     return num;
 }
 
