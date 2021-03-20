@@ -78,7 +78,7 @@ LongInt LongInt::operator+(const LongInt &num) const {
     }
     ans.erase(0, k);
 
-    if (ans.length() == 0) {
+    if (ans.length() == 0){
         ans.append(1, '0');
         flag = false;
     }
@@ -154,7 +154,7 @@ LongInt LongInt::operator-(const LongInt &num) const {
     }
     ans.erase(0, k);
 
-    if (ans.length() == 0) {
+    if (ans.length() == 0){
         ans.append(1, '0');
         flag = false;
     }
@@ -219,30 +219,6 @@ LongInt LongInt::operator*(const LongInt &num) const {
         return LongInt(string("-").append(res));
 
     return LongInt(res);
-    /*if (num == LongInt(0) || *this == LongInt(0))
-        return LongInt(0);
-
-    string n1 = number, n2 = num.number;
-    bool flag = false;
-
-    if (n1[0] == '-') {
-        flag = !flag;
-        n1.erase(0, 1);
-    }
-    if (n2[0] == '-') {
-        flag = !flag;
-        n2.erase(0, 1);
-    }
-
-    LongInt numb(n1);
-    for (LongInt i(1); i < LongInt(n2); ++i) {
-        numb = LongInt(n1) + numb;
-    }
-
-    if (flag)
-        return LongInt(string("-").append(numb.number));
-
-    return numb;*/
 }
 
 LongInt LongInt::operator*(const int &num) const {
@@ -290,7 +266,7 @@ LongInt LongInt::operator%(const LongInt &num) const {
     if (LongInt::abs((const LongInt &) *this) < LongInt::abs(num))
         return *this;
 
-    return (*this - (num * (*this / num)));
+    return ( *this - (num * (*this/num)));
 }
 
 bool LongInt::operator>(const LongInt &num) const {
@@ -398,7 +374,7 @@ LongInt &LongInt::operator=(const LongInt &i) {
 
 LongInt LongInt::abs(LongInt num) {
     if (num.number[0] == '-')
-        return LongInt(num.number.erase(0, 1));
+        return LongInt(num.number.erase(0,1));
     return num;
 }
 

@@ -9,28 +9,30 @@ class LongInt{
 
 	static sum(a, b){
 		var negative = 1
-		
-		if (a < 0 && b < 0){
-			a *= -1
-			b *= -1
+		if (a[0] == '-' && b[0] == '-'){
+			a = a.substring(1, a.length - 2)
+			b = b.substring(1, b.length - 2)
 			negative = -1;
 		}
 
+		console.log(a + " " + b)
+
 		var max = a, min = b;
 
-		if (max < min){
+		if (max.toString().length < min.toString().length){
 			[max, min] = [min, max]; //swap
 		}
 
-		var maxInd = max.length - 1, minInd = min.length - 1, ost = 0;
+		var maxInd = max.toString().length - 1, minInd = min.toString().length - 1, ost = 0;
 		var res = ""
 
-		for (let i = 0; i < max.length; i++){
-			var a = parseInt(max[maxInd])
+		for (let i = 0; i < max.toString().length; i++){
+			var n1 = parseInt(max[maxInd])
 
 			if (minInd !== -1){
-				var b = parseInt(min[minInd])
-				var c = a + b + ost
+				var n2 = parseInt(min[minInd])
+				console.log(maxInd + " " + minInd)
+				var c = n1 + n2 + ost
 				ost = 0;
 
 				if (c >= 10) {
@@ -40,7 +42,7 @@ class LongInt{
 				res += c
 				minInd--;
 			} else{
-				var c = a + ost
+				var c = n1 + ost
 				ost = 0
 				if (c >= 10){
 					c -= 10
@@ -51,9 +53,11 @@ class LongInt{
 			maxInd--;
 		}
 
-		console.log(res.split("").reverse().join(""))
+		res += ost
 
-		return parseInt(res.split("").reverse().join("")) * negative; //разворачиваем строку
+		console.log(res)
+
+		return parseInt(res.split("").reverse().join("")) * negative; //разворачиваем строку и возвращаем число
 	}
 
 	static abs(a){
