@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Николай",
+    "surname": "Николаев",
+    "personalAccountId": 100020003000,
+    "personalAccount": 136951,
+    "pin": 1234,
+    "userType": "USER"
+  },
+  {
+    "name": "Петр",
+    "surname": "Петров",
+    "personalAccountId": 100120013001,
+    "personalAccount": 7754,
+    "pin": 1324,
+    "userType": "USER"
+  },
+  {
+    "name": "Иван",
+    "surname": "Иванов",
+    "personalAccountId": 100120013001,
+    "personalAccount": 300,
+    "pin": 1423,
+    "userType": "USER"
+  },
+  {
+    "name": "ADMIN",
+    "surname": "",
+    "personalAccountId": 1111111111111,
+    "personalAccount": 2000000,
+    "pin": 1111,
+    "userType": "ADMIN"
+  },
+  {
+    "name": "ЖКХ",
+    "surname": "",
+    "personalAccountId": 100420043004,
+    "personalAccount": 10000,
+    "pin": 1234,
+    "userType": "ORGANISATION"
+  },
+  {
+    "name": "Положить деньги на телефон",
+    "surname": "",
+    "personalAccountId": 100520053005,
+    "personalAccount": 10000,
+    "pin": 1111,
+    "userType": "SERVICE"
+  },
+  {
+    "name": "Доставка еды",
+    "surname": "",
+    "personalAccountId": 100520053006,
+    "personalAccount": 10144,
+    "pin": 1111,
+    "userType": "SERVICE"
+  },
+  {
+    "name": "Подписка Яндекс.Плюс",
+    "surname": "",
+    "personalAccountId": 100520053007,
+    "personalAccount": 10000,
+    "pin": 1111,
+    "userType": "SERVICE"
+  }
+]
