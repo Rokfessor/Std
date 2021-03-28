@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8211aa68-e7ff-4f41-bb7b-db5991eef08f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Task2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../OO PO/LongIntC++/Спецификация.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../OO PO/LongIntC++/Спецификация.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../OO PO/Лекции.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../OO PO/Лекции.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/Tasks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/Task1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/out/production/Tasks/Task1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/out/production/Tasks/Task1/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/out/production/Tasks/Task1/Task1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/src/Task1/DMT.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/src/DMT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/src/Task1/DMTListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/src/DMTListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/src/Task1/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/src/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/src/Task1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/src/Task1/Painter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/src/Painter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/src/Task1/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Tasks/src/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Лекции.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Лекции.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CalcListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -48,7 +33,9 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1q7HfMo9Kij40npspIPQ3dDeQfi" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,8 +44,12 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
@@ -90,6 +81,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

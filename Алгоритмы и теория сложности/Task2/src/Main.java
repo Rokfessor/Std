@@ -1,11 +1,13 @@
+import javax.swing.*;
 import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
         GUI gui = new GUI();
-        gui.setSize(new Dimension(500, 500));
+        Calculator.setListener(gui);
+        gui.setSize(new Dimension(200, 500));
+        gui.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         gui.setResizable(false);
-        gui.pack();
         gui.setVisible(true);
     }
 }

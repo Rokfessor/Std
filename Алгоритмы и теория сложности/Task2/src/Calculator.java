@@ -1,47 +1,72 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 public class Calculator {
-    static int[] KRATN = {1, 1, 1, 1, 1};
-    static int[] SOL = new int[KRATN.length];
-    public static List<String> res = new ArrayList<>();
+    private static int[] KRATN;
+    private static int[] SOL;
+    private static List<String> res;
+    private static CalcListener listener;
+    private static long sleep = 2000;
+    private static int V;
 
-    public static void calc(int V, int index) {
+    public static void setListener(CalcListener listener) {
+        Calculator.listener = listener;
+    }
+
+    public static String calculate(int V, int[] mass) throws InterruptedException {
+        KRATN = mass;
+        Calculator.V = V;
+        res = new ArrayList<>();
+        SOL = new int[KRATN.length];
+        calc(V, KRATN.length - 1);
+        return formatResult();
+    }
+
+    private static String formatResult() {
+        StringBuilder sb = new StringBuilder();
+        for (String s : res) {
+            for (int i = 0; i < s.length(); i++) {
+                int a = Integer.parseInt(String.valueOf(s.charAt(i)));
+                if (a != 0) {
+                    for (int j = 0; j < a; j++) {
+                        sb.append((i + 1)).append(" ");
+                    }
+                }
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+    private static String arrToString(int[] arr) {
+        StringBuilder sb = new StringBuilder();
+        for (int i : arr) {
+            sb.append(i);
+        }
+        return sb.toString();
+    }
+
+    private static void calc(int V, int index) throws InterruptedException {
         for (int i = index; i >= 0; --i) {
             if ((KRATN[i] > 0) && (i + 1 <= V)) {
                 KRATN[i]--;
                 SOL[i]++;
-                System.err.println(Arrays.toString(SOL));
                 V -= (i + 1);
-                System.err.println(V);
+                Thread.sleep(sleep);  //gui
+                listener.stateChanged(KRATN, SOL); // gui
                 if (V == 0) {
-                    System.err.println("!");
-                    res.add(Arrays.toString(SOL));
+                    res.add(arrToString(SOL));
+                    listener.setResult(formatResult());
                 } else {
                     calc(V, i);
                 }
-
-
                 KRATN[i]++;
                 SOL[i]--;
                 V += (i + 1);
-
+               /* Thread.sleep(sleep);
+                listener.stateChanged(KRATN, SOL);*/
             }
         }
     }
-    /*public static void calc(int weight, int[] mass) {
-        for (int i = 1; i < (int) Math.pow(2, mass.length) - 1; i++) {
-            char[] m = Integer.toBinaryString(i).toCharArray();
-            int sum = 0;
-            for (int j = 0; j < m.length; j++) {
-                if (m[j] == '1')
-                    sum += mass[j];
-            }
-
-
-            System.err.println(Arrays.toString(mass) + " = " + Integer.toBinaryString(i) + " | " + sum);
-        }
-    }*/
 }
