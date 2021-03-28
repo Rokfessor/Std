@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Oladushek/Desktop/Std/OO PO/Task1/LongInt.cpp
+C:/Users/Oladushek/Desktop/Std/OO PO/LongIntC++/Task1/LongInt.cpp
 LongInt.h
-C:/Users/Oladushek/Desktop/Std/OO PO/Task1/LongInt.h
+C:/Users/Oladushek/Desktop/Std/OO PO/LongIntC++/Task1/LongInt.h
 
-C:/Users/Oladushek/Desktop/Std/OO PO/Task1/LongInt.h
+C:/Users/Oladushek/Desktop/Std/OO PO/LongIntC++/Task1/LongInt.h
 string
 -
 malloc.h
@@ -23,4 +23,8 @@ cstdlib
 -
 bits/stdc++.h
 -
+
+C:/Users/Oladushek/Desktop/Std/OO PO/LongIntC++/Task1/main.cpp
+LongInt.h
+C:/Users/Oladushek/Desktop/Std/OO PO/LongIntC++/Task1/LongInt.h
 

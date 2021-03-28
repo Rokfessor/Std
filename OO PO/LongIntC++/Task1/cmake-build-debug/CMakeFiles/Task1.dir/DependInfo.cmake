@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Oladushek/Desktop/Std/OO PO/Task1/LongInt.cpp" "C:/Users/Oladushek/Desktop/Std/OO PO/Task1/cmake-build-debug/CMakeFiles/Task1.dir/LongInt.cpp.obj"
-  "C:/Users/Oladushek/Desktop/Std/OO PO/Task1/main.cpp" "C:/Users/Oladushek/Desktop/Std/OO PO/Task1/cmake-build-debug/CMakeFiles/Task1.dir/main.cpp.obj"
+  "C:/Users/Oladushek/Desktop/Std/OO PO/LongIntC++/Task1/LongInt.cpp" "C:/Users/Oladushek/Desktop/Std/OO PO/LongIntC++/Task1/cmake-build-debug/CMakeFiles/Task1.dir/LongInt.cpp.obj"
+  "C:/Users/Oladushek/Desktop/Std/OO PO/LongIntC++/Task1/main.cpp" "C:/Users/Oladushek/Desktop/Std/OO PO/LongIntC++/Task1/cmake-build-debug/CMakeFiles/Task1.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -4,17 +4,27 @@
 	<title>Long int</title>
 	 <meta charset="UTF-8">
 	<script src="script.js"></script>
+	<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 	<div>
-		<input type="text" id="firstNumber">
-		<select value="+" id="selectID">
+		<input type="text" id="firstNumber" claaa="in">
+		<select value="+" id="select">
 			<option value="+">+</option>
 			<option value="-">-</option>
 			<option value="*">*</option>
 			<option value="/">/</option>
+			<option value="%">%</option>
+			<option value="=">=</option>
+			<option value=">">></option>
+			<option value="<"><</option>
+			<option value=">=">=></option>
+			<option value="<="><=</option>
 		</select>
-		<input type="text" id="secondNumber">
+		<span class="input">
+			<input type="text" id="secondNumber">
+		</span>
 		<button type="button" onclick="calculate()" name="secondNumber">=</button>
+		<label id="label"></label>
 	</div>
 </body>
