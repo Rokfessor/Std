@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8211aa68-e7ff-4f41-bb7b-db5991eef08f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CalcListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../OO PO/LongIntJS/~$ецификация.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../OO PO/LongIntJS/Спецификация.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../OO PO/LongIntJS/Спецификация.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Task2/CalcListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Task2/CalcListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Task2/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Task2/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Task2/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Task2/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Task2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Task2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CalcListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CalcListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />

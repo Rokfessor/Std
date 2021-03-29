@@ -7,7 +7,7 @@ public class Calculator {
     private static int[] SOL;
     private static List<String> res;
     private static CalcListener listener;
-    private static long sleep = 2000;
+    private static long sleep = 1000;
     private static int V;
 
     public static void setListener(CalcListener listener) {
@@ -54,7 +54,8 @@ public class Calculator {
                 SOL[i]++;
                 V -= (i + 1);
                 Thread.sleep(sleep);  //gui
-                listener.stateChanged(KRATN, SOL); // gui
+                listener.stateChanged(KRATN, SOL, true); // gui
+                Thread.sleep(sleep); //gui
                 if (V == 0) {
                     res.add(arrToString(SOL));
                     listener.setResult(formatResult());
@@ -64,8 +65,9 @@ public class Calculator {
                 KRATN[i]++;
                 SOL[i]--;
                 V += (i + 1);
-               /* Thread.sleep(sleep);
-                listener.stateChanged(KRATN, SOL);*/
+                Thread.sleep(sleep);  //gui
+                listener.stateChanged(KRATN, SOL, false); // gui
+                Thread.sleep(sleep); //gui
             }
         }
     }
