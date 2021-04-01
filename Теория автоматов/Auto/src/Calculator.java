@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Stack;
 
 public class Calculator {
     public static ArrayList<String> calculate(ArrayList<String> data) {
         String[] newData = Arrays.copyOf(data.toArray(), data.size(), String[].class);
         int size = newData.length;
-        ArrayList<String> stack = new ArrayList<>();
+        ArrayList<String> im = new ArrayList<>();
         String[] mark = repeatelem(0, size);
 
 
@@ -14,27 +13,26 @@ public class Calculator {
             for (int j = i + 1; j < size; j++) {
                 String c = combine(newData[i], newData[j]);
                 if (!c.equals("")) {
-                    stack.add(c);
+                    im.add(c);
                     mark[i] = "1";
                     mark[j] = "1";
                 }
             }
         }
 
-        String[] im = stack.toArray(new String[stack.size()]);
-        String[] mark2 = repeatelem(0, im.length);
-        for (int i = 0; i < im.length; i++) {
-            for (int j = i + 1; j < im.length; j++) {
-                if ((i != j) && (mark2[j].equals("0")) && (im[i].equals(im[j]))) {
+        String[] mark2 = repeatelem(0, im.size());
+        for (int i = 0; i < im.size(); i++) {
+            for (int j = i + 1; j < im.size(); j++) {
+                if ((i != j) && (mark2[j].equals("0")) && (im.get(i).equals(im.get(j)))) {
                     mark2[j] = "1";
                 }
             }
         }
 
         ArrayList<String> im2 = new ArrayList<>();
-        for (int i = 0; i < im.length; i++) {
+        for (int i = 0; i < im.size(); i++) {
             if (mark2[i].equals("0")) {
-                im2.add(im[i]);
+                im2.add(im.get(i));
             }
         }
 
@@ -58,8 +56,6 @@ public class Calculator {
         st.add(String.valueOf(elem));
         if (remaining > 1)
             addOneAndRecurse(st, remaining - 1, elem);
-
-
         return st.toArray(new String[0]);
     }
 
@@ -77,8 +73,8 @@ public class Calculator {
                 sb.append(m.charAt(i));
             } else if (m.charAt(i) != n.charAt(i)) {
                 sb.append('-');
+                count++;
             }
-            count++;
         }
 
         if (count > 1) {
