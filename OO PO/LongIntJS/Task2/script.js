@@ -27,14 +27,14 @@ function calculate(){
 		/*console.log(sA.toString() + "+" + sB.toString() + "=" + LongInt.sum(a, b) + "|" + (a+b));
 		console.log(sA.toString() + "-" + sB.toString() + "=" + LongInt.diff(a, b) + "|" + (a-b));
 		console.log(sA.toString() + "*" + sB.toString() + "=" + LongInt.multiply(a, b) + "|" + (a*b));*/
-		console.log(sA.toString() + "/" + sB.toString() + "=" + LongInt.div(a, b) + "|" + Math.trunc(a/b));
+		/*console.log(sA.toString() + "/" + sB.toString() + "=" + LongInt.div(a, b) + "|" + Math.trunc(a/b));
 		console.log(sA.toString() + "%" + sB.toString() + "=" + LongInt.mod(a, b) + "|" + (a%b));
-		/*console.log(sA.toString() + "=" + sB.toString() + "=" + LongInt.equals(a, b) + "|" + (a==b));
+		console.log(sA.toString() + "=" + sB.toString() + "=" + LongInt.equals(a, b) + "|" + (a==b));
 		console.log(sA.toString() + ">" + sB.toString() + "=" + LongInt.greater(a, b) + "|" + (a>b));
 		console.log(sA.toString() + "<" + sB.toString() + "=" + LongInt.less(a, b) + "|" + (a<b));
 		console.log(sA.toString() + ">=" + sB.toString() + "=" + LongInt.greaterOrEquals(a, b) + "|" + (a>=b));
-		console.log(sA.toString() + "<=" + sB.toString() + "=" + LongInt.lessOrEquals(a, b) + "|" + (a<=b));*/
-		console.log("==============");
+		console.log(sA.toString() + "<=" + sB.toString() + "=" + LongInt.lessOrEquals(a, b) + "|" + (a<=b));
+		console.log("==============");*/
 	}
 }
 
@@ -318,10 +318,8 @@ class LongInt{
 		for (let i = start; i < a.length; i++){
 			for (let j = 1; j <= 9; j++){
 				let tempRes = LongInt.multiply(j, b);
-				console.log(tempRes + ">" + tempA + "=" + LongInt.greater(tempRes, tempA))
 				if (LongInt.greater(tempRes, tempA)){
 					res = res + (j - 1).toString();
-					console.log(tempA + "-" + LongInt.multiply(b, (j - 1)))
 					tempA = LongInt.diff(tempA, LongInt.multiply(b, (j - 1)));
 					break;
 				} else if (LongInt.equals(tempRes, tempA)){
@@ -335,6 +333,8 @@ class LongInt{
 				}
 			}
 			tempA = tempA + a[i + 1];
+			if (tempA == "00")
+				tempA = "0";
 		}
 	
 		if (negative)
