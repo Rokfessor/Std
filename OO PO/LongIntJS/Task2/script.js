@@ -122,9 +122,11 @@ class LongInt{
 			negative = !negative;
 		}
 		var max = a, min = b, ost =0;
+		console.log(max + "==" + min)
 		if (LongInt.greater(min, max)){
 			[max, min] = [min, max];
 		}
+		console.log(max + "==" + min)
 
 		var res = "0";
 		for (let i = min.length - 1; i >= 0; i--){
@@ -144,10 +146,15 @@ class LongInt{
 			if (parseInt(ost) != 0)
 				tempRes = ost + tempRes;
 
-			tempRes += Math.pow(10,(min.length - 1) - i).toString().substring(1);
+			let zero = "";
+			for (let j = 0; j < (min.length - 1) - i; j++)
+				zero += "0";
+
+			tempRes += zero;
 			res = LongInt.sum(res, tempRes);
 		}
-
+/*11111111111111111111111111111
+22222222222222222222222222222*/
 		if(negative)
 			res = "-" + res;
 
