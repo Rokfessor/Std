@@ -1,76 +1,100 @@
 package Task4;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
-public class CarsProvider {
-    private static int count;
+public class CarsProvider extends Thread {
+    private static int carsCount;
+    private static int obslCarsCount;
+    public static boolean stop = false;
+    private static List<Thread> threads = new ArrayList<>();
+    private Owner owner;
+    private final long mills = 60000;
 
-    public static int provide(int capacity, long t, long h, int cars, int w) {
+    public CarsProvider(Owner owner) {
+        this.owner = owner;
+    }
+
+    public synchronized void provide(int capacity, long t, long w, long newCar, double otnW) {
         ArrayBlockingQueue<String> queue = new ArrayBlockingQueue<>(capacity);
-        long lamb = h / cars;
-        count = 0;
-
-        /*Thread th1 = new Thread(() -> {
-            try {
-                for (int i = 1; i < cars; i++) {
-                    Thread.sleep(t);
-                    String car = queue.poll();
-                    if (car != null)
-                        System.err.println("Машина " + car + " выехала с осмотра \n");
-                    else {
-                        System.err.println("Машин на осмотре больше нет");
-                        break;
-                    }
-                }
-            } catch (InterruptedException ignored) {
-            }
-        });*/
-
-        List<Thread> threads = new ArrayList<>();
-        for (int i = 0; i < cars; i++) {
-            String car = String.valueOf(i + 1);
-            Thread thread = new Thread(() -> {
-                System.err.println("Машина " + car + " едет на осмотр в \n");
-                try {
-                    long wa = System.currentTimeMillis();
-                    boolean f = queue.offer(car, w, TimeUnit.MILLISECONDS);
-                    wa = (System.currentTimeMillis() - wa) / 1000;
-                    if (f) {
-                        long finalWa = wa;
-                        Thread th = new Thread(() -> {
-                            System.err.println("Машина " + car + " подождала " + finalWa + " минут и заехала на осмотр \n");
-                            try {
-                                Thread.sleep(t);
-                                if (queue.poll() != null)
-                                    System.err.println("Машина " + car + " осмотрелась за " + (t / 1000) + " минуты и уехала\n");
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        });
-                        th.start();
-                        th.join();
-                        count++;
-                    } else
-                        System.err.println("Машина " + car + " подождала " + wa + " минут и НЕ заехала на осмотр \n");
-
-                } catch (InterruptedException ignored) {}
-            });
-            threads.add(thread);
-        }
-
+        carsCount = 0;
+        obslCarsCount = 0;
         try {
-            for (Thread th : threads) {
-                th.start();
-                Thread.sleep(lamb);
+            long tStart = System.currentTimeMillis();
+            System.err.println("==" + new SimpleDateFormat("hh:mm:ss").format(0) + "== " + tStart);
+
+            while (!stop) {
+                Thread thread = new Thread(() -> {
+                    String car = String.valueOf(carsCount);
+                    long temp = System.currentTimeMillis();
+                    System.err.println(new SimpleDateFormat("hh:mm:ss").format(((temp + ((temp - tStart) * otnW)) - tStart))
+                            + " " + "Машина " + car + " едет на осмотр");
+                    try {
+                        long wRand = (long) Math.abs(new Random().nextGaussian() * w + (w / 2));
+                        long wa = System.currentTimeMillis();
+                        boolean f = queue.offer(car, (long) ((wRand / otnW) * mills), TimeUnit.MILLISECONDS);
+                        wa = (long) ((System.currentTimeMillis() - wa) * otnW) / 60000;
+
+                        if (f) {
+                            long finalWa = wa;
+                            Thread th = new Thread(() -> {
+                                long temp1 = System.currentTimeMillis();
+
+                                System.out.println(new SimpleDateFormat("hh:mm:ss").format(((temp1 + ((temp1 - tStart) * otnW)) - tStart))
+                                        + " " + "Машина " + car + " подождала " + finalWa + " мин. и заехала на осмотр");
+
+                                try {
+
+                                    //(long)(t + (Math.random()) * (long)(t * 0.2))
+                                    long tRand = (long) Math.abs(new Random().nextGaussian() * t + (t / 2));
+                                    Thread.sleep((long) ((tRand / otnW) * mills));
+
+                                    if (queue.poll() != null) {
+
+                                        temp1 = System.currentTimeMillis();
+                                        System.out.println(new SimpleDateFormat("hh:mm:ss").format(((temp1 + ((temp1 - tStart) * otnW)) - tStart))
+                                                + " " + "Машина " + car + " осмотрелась за " + tRand + " мин. и уехала");
+                                    }
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+
+                            });
+                            th.start();
+                            th.join();
+                            obslCarsCount++;
+                        } else {
+                            long temp1 = System.currentTimeMillis();
+                            System.err.println(new SimpleDateFormat("hh:mm:ss").format(((temp1 + ((temp1 - tStart) * otnW)) - tStart))
+                                    + " " + "Машина " + car + " подождала " + wa + " мин. и НЕ заехала на осмотр");
+                        }
+                    } catch (InterruptedException ignored) {
+                    }
+                });
+
+                thread.start();
+                threads.add(thread);
+                ++carsCount;
+                long randNewCar = (long) Math.abs(new Random().nextGaussian() * newCar + (newCar / 2)) + 1;
+                owner.carsProvider.wait((long) ((randNewCar / otnW) * mills));
+            }
+            long tEnd = System.currentTimeMillis();
+            System.err.println("==" + new SimpleDateFormat("hh:mm:ss").format(tEnd + ((tEnd - tStart) * otnW) - tStart) + "== " + (tEnd));
+            for (Thread thread : threads) {
+                thread.interrupt();
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        return count;
+        double otn = (double) obslCarsCount / carsCount;
+        System.err.println("Всего машин = " + carsCount + "\nОбслуженные машины = " + obslCarsCount);
+        System.err.println("Относительное = " + otn);
+        System.err.println("Абсолютное = " + (int)(otn * 100) + "%");
     }
 }
 
