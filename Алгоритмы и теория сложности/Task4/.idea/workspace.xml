@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="90452232-371f-4662-bc10-a096dd0284da" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Task3/src/ApproxCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Task4/Calculator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Task4/GUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Task4/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Task4/Obj.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Task4/Painter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ApproxCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ApproxDataHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Obj.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Painter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Step.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/.idea/libraries/javafx_sdk_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/Shar.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/resources/fon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/resources/fon1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/resources/fon2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/src/Handler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/src/Painter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/src/Res.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Экономика/Finance/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task2/CalcWithThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task2/CalcWithThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task3/T2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task3/T2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task4/CarsProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task4/CarsProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task4/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task4/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/src/Task4/CarsProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/src/Task4/CarsProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/src/Task4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/src/Task4/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../OO PO/Лекции.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../OO PO/Лекции.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task3/out/production/Task3/CalcListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task3/out/production/Task3/CalcListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task3/out/production/Task3/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task3/out/production/Task3/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task3/out/production/Task3/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task3/out/production/Task3/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task3/out/production/Task3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task3/out/production/Task3/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task3/src/CalcListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task3/src/CalcListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task3/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task3/src/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task3/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task3/src/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task3/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../БЖД/Лекции.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../БЖД/Лекции.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Теория автоматов/Лекции.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Теория автоматов/Лекции.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Экономика/Лекции.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Экономика/Лекции.docx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1r3R9TDJC6D66sgr5FZyfbKSoza" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../JAVA многопоточка/Tasks" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Task4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="90452232-371f-4662-bc10-a096dd0284da" name="Default Changelist" comment="" />
+      <created>1618202639977</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618202639977</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

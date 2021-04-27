@@ -34,7 +34,7 @@ public class CarsProvider extends Thread {
                     System.err.println(new SimpleDateFormat("hh:mm:ss").format(((temp + ((temp - tStart) * otnW)) - tStart))
                             + " " + "Машина " + car + " едет на осмотр");
                     try {
-                        long wRand = (long) Math.abs(new Random().nextGaussian() * w + (w / 2));
+                        long wRand = w == 0 ? 0 : (long) new Random().nextGaussian() + w ;
                         long wa = System.currentTimeMillis();
                         boolean f = queue.offer(car, (long) ((wRand / otnW) * mills), TimeUnit.MILLISECONDS);
                         wa = (long) ((System.currentTimeMillis() - wa) * otnW) / 60000;
@@ -93,8 +93,8 @@ public class CarsProvider extends Thread {
 
         double otn = (double) obslCarsCount / carsCount;
         System.err.println("Всего машин = " + carsCount + "\nОбслуженные машины = " + obslCarsCount);
-        System.err.println("Относительное = " + otn);
-        System.err.println("Абсолютное = " + (int)(otn * 100) + "%");
+        System.err.println("Относительное = " + (int)(otn * 100) + "%");
+        System.err.println("Абсолютное = " + otn);
     }
 }
 
