@@ -17,7 +17,7 @@
   
 ⚠⚠Пункты для самых крутых ребяток⚠⚠  
   
-6) Утановка scene builder'a. Идем ![сюда](https://gluonhq.com/products/scene-builder/) и качаем его. Далее устанавливаем и заходим в идею File->Settngs Languages & Frameworks->JavaFx и в текстовое поле суем путь до exe'шника scene buildr'a ![Опа, походу картинка не загрузилась. Удачи бро](https://sun9-37.userapi.com/impg/MMjV1hzWSSfFh_eJgAYH-pRYQiOwhJdFE0-cog/NLvc0CAzpbw.jpg?size=1129x881&quality=96&sign=e8a6714c11883b8a0d8a923f1e6121de&type=album)
+6) Утановка scene builder'a. Идем [сюда](https://gluonhq.com/products/scene-builder/) и качаем его. Далее устанавливаем и заходим в идею File->Settngs Languages & Frameworks->JavaFx и в текстовое поле суем путь до exe'шника scene buildr'a ![Опа, походу картинка не загрузилась. Удачи бро](https://sun9-37.userapi.com/impg/MMjV1hzWSSfFh_eJgAYH-pRYQiOwhJdFE0-cog/NLvc0CAzpbw.jpg?size=1129x881&quality=96&sign=e8a6714c11883b8a0d8a923f1e6121de&type=album)
   После этого можно будет нажать на fxml файлик пкм'ом, выбрать Open In Scenebuilder и редактировать гуишку в редакторе гуишек ![Тут был прикольчик, но он не загрузился((](https://i0.wp.com/lacriaturacreativa.com/wp-content/uploads/2017/10/cursos-disenos-grafico.gif)
 7) Можно оформить переменную, которая будет отвечать за путь до либы. ![https://metanit.com/java/javafx/1.8.php в самом конце](https://sun9-28.userapi.com/impg/swM494Ssv8aBcfpN2jpRl_2qwBiN7X-SrF68Nw/8AwVyTRmgdw.jpg?size=1123x870&quality=96&sign=134319df6be5a1d4fca61f841f101003&type=album) тогда в VM options мы сможем делать так   
 --module-path {PATH_TO_FX} --add-modules javafx.controls,javafx.fxml , а не так  
