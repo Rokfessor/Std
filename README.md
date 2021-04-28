@@ -12,7 +12,7 @@
  3.4 Тыкаем ок ок ок
 4) Шок контент, уже 4 пункт. Осталось немножко!  
   Идем в Run->Edit Configurations, в Modify options тыкаем Add VM options ![Опа, походу картинка не загрузилась. Удачи бро](https://sun9-38.userapi.com/impg/GOapljRU5Ti-o68fPi3hfYmXwJQbeb2Oac_aOA/xWRru3A8DW0.jpg?size=1395x848&quality=96&sign=5b33895468006c68c94f1e6292525809&type=album)
-  После чего в появившейся строчке вставляем вот это --module-path абсолютный/путь/до/javafx-sdk-16/lib --add-modules javafx.controls,javafx.fxml Применяем настроечки.
+  После чего в появившейся строчке вставляем вот это --module-path абсолютный/путь/до/javafx-sdk-16/lib --add-modules=javafx.controls,javafx.fxml Применяем настроечки.
 5) Иии вау, все работает. Запускаем наш тестовый код, который сгенерировала идея и радуемся пустому окошку. А если не работает, тооо... ¯\\_(ツ)_/¯ Посмотри [здесь](https://www.jetbrains.com/help/idea/javafx.html), [здесь](https://openjfx.io/openjfx-docs/#install-javafx) или [здесь](https://metanit.com/java/javafx/1.8.php), но сильно понятнее не станет  
   
 ⚠⚠Пункты для самых крутых ребяток⚠⚠  
