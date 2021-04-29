@@ -21,7 +21,7 @@
   После этого можно будет нажать на fxml файлик пкм'ом, выбрать Open In Scenebuilder и редактировать гуишку в редакторе гуишек ![Тут был прикольчик, но он не загрузился((](https://i0.wp.com/lacriaturacreativa.com/wp-content/uploads/2017/10/cursos-disenos-grafico.gif)
 7) Можно оформить переменную, которая будет отвечать за путь до либы. ![https://metanit.com/java/javafx/1.8.php в самом конце](https://sun9-28.userapi.com/impg/swM494Ssv8aBcfpN2jpRl_2qwBiN7X-SrF68Nw/8AwVyTRmgdw.jpg?size=1123x870&quality=96&sign=134319df6be5a1d4fca61f841f101003&type=album) тогда в VM options мы сможем делать так   
 --module-path {PATH_TO_FX} --add-modules javafx.controls,javafx.fxml , а не так  
---module-path абсолютный/путь/до/javafx-sdk-16/lib --add-modules javafx.controls,javafx.fxml  (что может быть удобным, если ты будешь брать мои работы, т.к. я использую именно этот путь, иначе придется всегда указывать свой, а это гемор). 
+--module-path абсолютный/путь/до/javafx-sdk-16/lib --add-modules=javafx.controls,javafx.fxml  (что может быть удобным, если ты будешь брать мои работы, т.к. я использую именно этот путь, иначе придется всегда указывать свой, а это гемор). 
 8) Никак. 
 
 ❔❔Немного ответов на вопросы❔❔  
