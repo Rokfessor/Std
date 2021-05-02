@@ -1,6 +1,5 @@
 package Task2;
 
-import java.rmi.ServerError;
 import java.util.ArrayList;
 import java.util.List;
 

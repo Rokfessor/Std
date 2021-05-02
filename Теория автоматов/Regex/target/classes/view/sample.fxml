@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.TextFlow?>
+
+<?import org.fxmisc.richtext.StyleClassedTextField?>
+<?import org.fxmisc.richtext.StyleClassedTextArea?>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+  <tabs>
+    <Tab text="Task 1">
+         <content>
+            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+               <children>
+                  <Label text="Множество цепочек с алфавитом {a, b, c}, содержащих хотя бы один символ 'a' и хотя бы один символ 'b'" />
+                   <StyleClassedTextField fx:id="tf11" prefHeight="200.0" prefWidth="200.0" onKeyTyped="#tf11Typed"/>
+                  <Label text="Множество цепочек из нулей и единиц, в которых десятый от правого края символ равен 1" />
+                   <StyleClassedTextField fx:id="tf12" prefHeight="200.0" prefWidth="200.0" onKeyTyped="#tf12Typed"/>
+                  <Label text="Множество цепочек из нулей и единиц, содержащих не более одной пары последовательных единиц" />
+                  <StyleClassedTextField fx:id="tf13" prefHeight="200.0" prefWidth="200.0" onKeyTyped="#tf13Typed"/>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </content>
+    </Tab>
+    <Tab text="Task 2">
+      <content>
+          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+              <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+              </opaqueInsets>
+              <children>
+                  <Label text="Множество всех цепочек из нулей и единиц, в которых каждая пара смежных нулей находится перед парой смежных единиц" />
+                  <StyleClassedTextField fx:id="tf21" prefHeight="200.0" prefWidth="200.0" onKeyTyped="#tf21Typed"/>
+                  <Label text="Множество цепочек, состоящих из нулей и единиц, в которых число нулей кратно пяти" />
+                  <StyleClassedTextField fx:id="tf22" prefHeight="200.0" prefWidth="200.0" onKeyTyped="#tf22Typed"/>
+              </children>
+              <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+              </padding>
+          </VBox>
+      </content>
+    </Tab>
+      <Tab text="Task 3 ">
+          <content>
+              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                  <opaqueInsets>
+                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </opaqueInsets>
+                  <children>
+                      <Label text="Множество всех цепочек из нулей и единиц, в которых нет подцепочки 101" />
+                      <StyleClassedTextField fx:id="tf31" prefHeight="200.0" prefWidth="200.0" onKeyTyped="#tf31Typed"/>
+                      <Label text="Множество всех цепочек, в которых поровну нулей и единиц и ни один их префикс не содержит нулей на два больше, чем единиц, или единиц на две больше, чем нулей" />
+                      <StyleClassedTextField fx:id="tf32" prefHeight="200.0" prefWidth="200.0" onKeyTyped="#tf32Typed"/>
+                      <Label text="Множество всех цепочек из нулей и единиц, в которых число нулей делится на пять, а количество единиц четно" />
+                      <StyleClassedTextField fx:id="tf33" prefHeight="200.0" prefWidth="200.0" onKeyTyped="#tf33Typed"/>
+                  </children>
+                  <padding>
+                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+              </VBox>
+          </content>
+      </Tab>
+      <Tab text="Task 4">
+          <content>
+              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                  <opaqueInsets>
+                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </opaqueInsets>
+                  <children>
+                      <Label text="Регулярное выражение для описания телефонных номеров всех видов" />
+                      <StyleClassedTextField fx:id="tf41" prefHeight="200.0" prefWidth="200.0" onKeyTyped="#tf41Typed"/>
+                  </children>
+                  <padding>
+                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+              </VBox>
+          </content>
+      </Tab>
+      <Tab text="Task 5">
+        <content>
+            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                <opaqueInsets>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </opaqueInsets>
+                <children>
+                    <Label text="Регулярное выражение для представления заработной платы в том виде, в котором она указывается в объявлениях о работе" />
+                    <StyleClassedTextField fx:id="tf51" prefHeight="200.0" prefWidth="200.0" onKeyTyped="#tf51Typed"/>
+                </children>
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+            </VBox>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
