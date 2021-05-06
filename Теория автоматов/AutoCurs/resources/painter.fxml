@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane prefHeight="523.0" prefWidth="627.0" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Painter">
+<children>
+    <Circle fx:id="stateMoveCircle" centerX="259.0" centerY="58.0" fill="#ffef1f" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Line endX="107.2929458618164" endY="261.70709228515625" startX="307.5858459472656" startY="260.0" />
+    <Line endX="107.29293060302734" endY="345.507080078125" startX="101.30355072021484" startY="257.16015625" />
+    <Line endX="154.00003051757812" endY="428.0" startX="107.0000228881836" startY="344.0" />
+    <Line endX="438.29290771484375" endY="100.29290771484375" startX="362.0" startY="57.0" />
+    <Line endX="439.0000305175781" endY="101.00001525878906" startX="500.0000305175781" startY="160.00001525878906" />
+    <Line endX="361.29290771484375" endY="56.29290008544922" startX="308.2929382324219" startY="259.29290771484375" />
+    <Line endX="500.70709228515625" endY="160.7071075439453" startX="309.0" startY="260.0" />
+    <Line endX="259.0000305175781" endY="58.99999237060547" startX="309.0000305175781" startY="260.0" />
+    <Line endX="309.0000305175781" endY="260.0" startX="124.58572387695312" startY="173.99998474121094" />
+    <Line endX="195.99996948242188" endY="100.5857925415039" startX="123.87862396240234" startY="173.29287719726562" />
+    <Line endX="309.0000305175781" endY="260.0" startX="196.70706176757812" startY="99.87870025634766" />
+    <Line endX="309.0" endY="262.4141845703125" startX="108.0000228881836" startY="350.39996337890625" />
+    <Line endX="309.70703125" endY="261.7070617675781" startX="158.30355834960938" startY="432.79998779296875" />
+    <Line endX="158.30355834960938" endY="430.509765625" startX="236.99998474121094" startY="487.0" />
+    <Line endX="422.0000305175781" endY="468.0" startX="309.0000305175781" startY="260.0" />
+    <Line endX="423.1999816894531" endY="480.810546875" startX="501.1999816894531" startY="410.244140625" />
+    <Line endX="501.0000305175781" endY="411.0" startX="309.7070617675781" startY="261.70709228515625" />
+    <Line endX="309.7070617675781" endY="261.7070617675781" startX="237.70706176757812" startY="487.70709228515625" />
+    <Line endX="499.1999816894531" endY="323.244140625" startX="309.7071228027344" startY="261.7070617675781" />
+    <Line endX="184.39999389648438" endY="246.59996032714844" startX="125.2928695678711" startY="174.7070770263672" />
+    <Line endX="309.0" endY="260.0" startX="185.1071014404297" startY="247.3070831298828" />
+    <Line endX="505.9999694824219" endY="242.0" startX="308.9999084472656" startY="262.4141845703125" />
+    <Line endX="438.2929382324219" endY="100.29292297363281" startX="308.2928771972656" startY="260.70709228515625" />
+    <Circle fx:id="offOnCircle" fill="#fffc00" layoutX="259.0" layoutY="59.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Circle fx:id="waitCircle" fill="WHITE" layoutX="309.0" layoutY="261.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Circle fx:id="symPresCondTrue" fill="WHITE" layoutX="196.0" layoutY="102.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Circle fx:id="symPresCond" fill="WHITE" layoutX="126.0" layoutY="174.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Circle fx:id="cCePresCondTrue" fill="WHITE" layoutX="154.0" layoutY="428.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Circle fx:id="cCePresCond" fill="WHITE" layoutX="107.0" layoutY="344.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Circle fx:id="actionCircle" fill="WHITE" layoutX="237.0" layoutY="487.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Circle fx:id="doActCircle" fill="WHITE" layoutX="422.0" layoutY="468.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Circle fx:id="printResCircle" fill="WHITE" layoutX="501.0" layoutY="411.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Circle fx:id="invertCircle" fill="WHITE" layoutX="499.0" layoutY="324.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Text layoutX="235.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Калькулятор выключен     " wrappingWidth="94.6699390411377">
+        <font>
+            <Font size="9.0" />
+        </font>
+    </Text>
+    <Text layoutX="286.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ожидание нажатия кнопки" wrappingWidth="52.607147216796875">
+        <font>
+            <Font size="10.0" />
+        </font>
+    </Text>
+    <Text layoutX="478.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Инверти-ровать знак" wrappingWidth="42.399999999999864">
+        <font>
+            <Font size="9.0" />
+        </font>
+    </Text>
+    <Text layoutX="480.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Вывести результат на экран" wrappingWidth="42.399999999999864">
+        <font>
+            <Font size="9.0" />
+        </font>
+    </Text>
+    <Text layoutX="397.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Выполнить действия" wrappingWidth="74.12136840820312">
+        <font>
+            <Font size="10.0" />
+        </font>
+    </Text>
+    <Text layoutX="214.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Записать действие в память" wrappingWidth="71.41421508789062">
+        <font>
+            <Font size="10.0" />
+        </font>
+    </Text>
+    <Text layoutX="132.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Очистить экран" wrappingWidth="52.607147216796875">
+        <font>
+            <Font size="10.0" />
+        </font>
+    </Text>
+    <Text layoutX="89.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Кнопка нажата в первый раз?" wrappingWidth="42.399999999999864">
+        <font>
+            <Font size="9.0" />
+        </font>
+    </Text>
+    <Text layoutX="153.0" layoutY="294.0" rotate="-23.7" strokeType="OUTSIDE" strokeWidth="0.0" text="Кнопка 'C/CE' нажата" wrappingWidth="140.61547088623047">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+    <Text layoutX="208.0" layoutY="377.0" rotate="-72.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Кнопка действия нажата">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+    <Text layoutX="329.0" layoutY="362.0" rotate="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Кнопка '=' нажата">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+    <Text layoutX="354.0" layoutY="289.0" rotate="16.9" strokeType="OUTSIDE" strokeWidth="0.0" text="Кнопка '+-' нажата">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+    <Text layoutX="234.0" layoutY="164.0" rotate="76.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Кнопка 'OFF/ON' Нажата">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+    <Text layoutX="100.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Символов меньше 8?" wrappingWidth="60.0">
+        <font>
+            <Font size="10.0" />
+        </font>
+    </Text>
+    <Text layoutX="177.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Добавить символ на экран" wrappingWidth="60.0">
+        <font>
+            <Font size="9.0" />
+        </font>
+    </Text>
+    <Text layoutX="135.0" layoutY="134.0" rotate="-45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="True">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+    <Text layoutX="187.0" layoutY="216.0" rotate="25.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Нажат символ">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+    <Text layoutX="136.0" layoutY="222.0" rotate="51.7" strokeType="OUTSIDE" strokeWidth="0.0" text="False">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+    <Circle fx:id="mrcCond" fill="WHITE" layoutX="439.0" layoutY="101.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Circle fx:id="memCircle" fill="WHITE" layoutX="506.0" layoutY="242.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Text layoutX="353.0" layoutY="250.0" rotate="-5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Кнопка 'М+\М-' нажата">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+    <Text layoutX="314.0" layoutY="178.0" rotate="-51.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Кнопка 'MRC' нажата">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+    <Text layoutX="482.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Добавить\отнять от памяти" wrappingWidth="52.607147216796875">
+        <font>
+            <Font size="10.0" />
+        </font>
+    </Text>
+    <Circle fx:id="mrcCondFalse" fill="WHITE" layoutX="500.0" layoutY="160.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Circle fx:id="mrcCondTrue" fill="WHITE" layoutX="362.0" layoutY="57.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+    <Text layoutX="420.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Кнопка нажата в перавый раз?" wrappingWidth="42.399999999999864">
+        <font>
+            <Font size="9.0" />
+        </font>
+    </Text>
+    <Text layoutX="470.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="False">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+    <Text layoutX="403.0" layoutY="73.0" rotate="18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="True">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+    <Text layoutX="340.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Очистить память" wrappingWidth="52.607147216796875">
+        <font>
+            <Font size="10.0" />
+        </font>
+    </Text>
+    <Text layoutX="481.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Вывести значение памяти на экран" wrappingWidth="42.399999999999864">
+        <font>
+            <Font size="9.0" />
+        </font>
+    </Text>
+      <Circle fx:id="cCePresCondFalse" fill="WHITE" layoutX="100.0" layoutY="259.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="77.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Очистить выражние в паямти" wrappingWidth="52.607147216796875">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="80.0" layoutY="308.0" rotate="-3.4" strokeType="OUTSIDE" strokeWidth="0.0" text="False">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="107.0" layoutY="391.0" rotate="-16.4" strokeType="OUTSIDE" strokeWidth="0.0" text="True">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Circle fill="WHITE" layoutX="325.0" layoutY="486.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="302.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="71.41421508789062">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="128.0" layoutY="389.0" rotate="152.7">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="97.0" layoutY="288.0">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="134.0" layoutY="328.0" rotate="-106.4">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="278.0" layoutY="282.0" rotate="38.8">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="177.0" layoutY="443.0" rotate="-45.0">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="242.0" layoutY="444.0" rotate="-160.4">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="397.0" layoutY="427.0" rotate="158.5">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="466.0" layoutY="429.0" rotate="45.0">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="332.0" layoutY="276.0" rotate="-60.5">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="336.0" layoutY="265.0" rotate="-72.8">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="455.0" layoutY="305.0" rotate="104.5">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="265.0" layoutY="251.0" rotate="101.3">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="152.0" layoutY="183.0" rotate="-68.7">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="161.0" layoutY="122.0" rotate="45.0">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="281.0" layoutY="224.0" rotate="156.9">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="310.0" layoutY="219.0" rotate="-164.3">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="294.0" layoutY="218.0" rotate="174.1">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="260.0" layoutY="88.0" rotate="-8.1">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="332.0" layoutY="235.0" rotate="-121.8">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="407.0" layoutY="122.0" rotate="35.5">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="462.0" layoutY="240.0" rotate="80.8">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="339.0" layoutY="251.0" rotate="-97.4">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="467.0" layoutY="128.0" rotate="137.6">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="15.0" layoutX="387.0" layoutY="68.0" rotate="-60.1">
+         <image>
+            <Image url="@/images/arrow.png" />
+         </image>
+      </ImageView>
+</children></Pane>
