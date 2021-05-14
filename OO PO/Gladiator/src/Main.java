@@ -1,16 +1,23 @@
+import controller.MenuController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+import java.io.IOException;
 
+public class Main extends Application {
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/view/sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+    public void start(Stage primaryStage) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/menu.fxml"));
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ((MenuController)loader.getController()).setStage(primaryStage);
+        primaryStage.setTitle("Gladiators");
+        primaryStage.setScene(new Scene(loader.getRoot(), 1280, 720));
         primaryStage.show();
     }
 

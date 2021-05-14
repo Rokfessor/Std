@@ -3,8 +3,7 @@ package model.weapon;
 import model.gladiator.Gladiator;
 
 public class Sword extends Weapon {
-    @Override
-    public void hit(Gladiator gladiator) {
-
+    public Sword() {
+        super(15, Weapon.DEFAULT_INTEGRITY, Weapon.DEFAILT_INTEGRITY_COEF, Weapon.DEFAULT_MISS_CHANCE);
     }
 }

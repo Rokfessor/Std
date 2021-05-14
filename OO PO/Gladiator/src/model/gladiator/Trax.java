@@ -1,35 +1,74 @@
 package model.gladiator;
 
 import model.actions.Action;
+import model.actions.Attack;
+import model.actions.Block;
+import model.actions.Debuff;
+import model.protection.Protection;
+import model.utils.Utils;
+import model.weapon.Weapon;
 
 public class Trax extends Gladiator {
+    public Trax(Protection protection, Weapon weapon) {
 
-    @Override
-    public Action[] action(int actionType) {
-        return null;
-    }
+        debuff = new Debuff(2) {
+            @Override
+            public Action onActionStart(int actionType) {
+                if (actionType == Action.ATTACK) {
+                    count--;
+                    return new Action() {
+                        @Override
+                        public void doAction(Gladiator me, Gladiator enemy) {
+                            me.health += 10;
+                        }
+                    };
+                }
+                return null;
+            }
 
-    @Override
-    public Action[] actionIsEnd(int actionType) {
-        return null;
-    }
+            @Override
+            public Action onActionEnd(int actionType) {
+                return null;
+            }
+        };
 
-    @Override
-    public void doAttack(Gladiator enemy) {
+        attack = new Attack() {
+            @Override
+            public double doAttack(Gladiator enemy, int ATTACK_TYPE, int ATTACK_POINT) {
+                if (ATTACK_TYPE == Attack.WEAPON) {
+                    if (weapon.missed())
+                        return 0;
+                    else
+                        return weapon.calcDamage();
+                } else {
+                    return damage;
+                }
+            }
+        };
 
-    }
+        block = new Block() {
+            @Override
+            public double doBlock(Gladiator me, Gladiator enemy,double damage, int ATTACK_POINT) {
+                if (evade())
+                    return 0;
+                else {
+                    if (shield != null && shield.blocked())
+                        return shield.defend(me, enemy, damage);
+                    else if (protection != null) {
+                        return protection.defend(me, enemy,damage);
+                    } else
+                        return damage;
+                }
+            }
+        };
 
-    @Override
-    public void doSuperAttack(Gladiator enemy) {
-
-    }
-
-    @Override
-    public void doBlock(Gladiator enemy) {
-
-    }
-
-    @Override
-    public void doGetAttack(Gladiator enemy) {
+        superAttack = new Attack() {
+            @Override
+            public double doAttack(Gladiator enemy, int ATTACK_TYPE, int ATTACK_POINT) {
+                getDamage(Utils.round(health * 0.5));
+                return Utils.round(enemy.health * 0.5);
+            }
+        };
     }
 }
+

@@ -3,8 +3,18 @@ package model.actions;
 import model.gladiator.Gladiator;
 
 public abstract class Debuff {
-    private boolean active;
-    public boolean isActive(){return active;}
-    abstract public Action onActionStart(Gladiator gladiator, int actionType);
-    abstract public Action onActionEnd(Gladiator gladiator, int actionType);
+    public int count;
+    public boolean first = true;
+
+    public Debuff(int count) {
+        this.count = count;
+    }
+
+    public boolean isActive() {
+        return count <= 0;
+    }
+
+    abstract public Action onActionStart(int actionType);
+
+    abstract public Action onActionEnd(int actionType);
 }

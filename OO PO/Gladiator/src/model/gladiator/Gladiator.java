@@ -2,112 +2,100 @@ package model.gladiator;
 
 import model.actions.*;
 import model.protection.Protection;
+import model.protection.Shield;
 import model.weapon.Weapon;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Gladiator {
-    public final int ACTION_ATTACK = 0, ACTION_SUPER_ATTACK = 1, ACTION_BLOCK = 2, ACTION_GET_ATTACK = 3, ACTION_TIME = 4;
+    public double health;
+    public double evadeChance;
+    public double damage;
 
-    public double health = 0;
-    public double luck = 1;
-    public Protection[] protection = null;
-    public Weapon weapon = null;
+    public Protection helmet;
+    public Protection armor;
+    public Protection greaves;
+    public Shield shield;
+    public Weapon weapon;
+
     public List<Debuff> debuffs = new ArrayList<>();
-    public Debuff skill = null;
 
-    public Action attack = new Action() {
-        @Override
-        public void doAction(Gladiator me, Gladiator enemy) {
-        }
-    };
+    public Debuff debuff ;
+    public Attack attack;
+    public Attack superAttack;
+    public Block block;
 
-    public Action superAttack = new Action() {
-        @Override
-        public void doAction(Gladiator me, Gladiator enemy) {
-        }
-    };
 
-    public Action block = new Action() {
-        @Override
-        public void doAction(Gladiator me, Gladiator enemy) {
-
-        }
-    };
-
-    public Action getAttack = new Action() {
-        @Override
-        public void doAction(Gladiator me, Gladiator enemy) {
-
-        }
-    };
-
-    public Action[] action(int actionType) {
+    public List<Action> actionIsStart(int actionType) {
         List<Action> list = new ArrayList<>();
 
         for (Debuff debuff : debuffs) {
             if (debuff.isActive()) {
-                Action action = debuff.onActionStart(this, actionType);
+                Action action = debuff.onActionStart(actionType);
                 if (action != null)
                     list.add(action);
             }
         }
 
-        return list.toArray(new Action[0]);
+        return list;
     }
 
-    public Action[] actionIsEnd(int actionType) {
+    public List<Action> actionIsEnd(int actionType) {
         List<Action> list = new ArrayList<>();
 
         for (Debuff debuff : debuffs) {
             if (debuff.isActive()) {
-                Action action = debuff.onActionEnd(this, actionType);
+                Action action = debuff.onActionEnd(actionType);
                 if (action != null)
                     list.add(action);
             }
         }
 
-        return list.toArray(new Action[0]);
+        return list;
     }
 
-    public void doAttack(Gladiator enemy) {
-        for (Action action : action(ACTION_ATTACK))
+    public final void doAttack(Gladiator enemy, int ATTACK_TYPE, int ATTACK_POINT) {
+        for (Action action : actionIsStart(Action.ATTACK))
             action.doAction(this, enemy);
 
-        attack.doAction(this, enemy);
+        double damage = attack.doAttack(enemy, ATTACK_TYPE, ATTACK_POINT);
+        double blockedDamage = enemy.doBlock(this, damage, ATTACK_POINT);
+        enemy.getDamage(blockedDamage);
 
-        for (Action action : actionIsEnd(ACTION_ATTACK))
-            action.doAction(this, enemy);
-    }
+        //TODO добавить skill
 
-    public void doSuperAttack(Gladiator enemy) {
-        for (Action action : action(ACTION_SUPER_ATTACK))
-            action.doAction(this, enemy);
-
-        superAttack.doAction(this, enemy);
-
-        for (Action action : actionIsEnd(ACTION_ATTACK))
+        for (Action action : actionIsEnd(Action.ATTACK))
             action.doAction(this, enemy);
     }
 
-    public void doBlock(Gladiator enemy) {
-        for (Action action : action(ACTION_BLOCK))
+    public final double doBlock(Gladiator enemy, double damage, int ATTACK_POINT) {
+        for (Action action : actionIsStart(Action.BLOCK))
             action.doAction(this, enemy);
 
-        block.doAction(this, enemy);
+        damage = block.doBlock(this, enemy, damage, ATTACK_POINT);
 
-        for (Action action : actionIsEnd(ACTION_ATTACK))
+        for (Action action : actionIsEnd(Action.BLOCK))
+            action.doAction(this, enemy);
+
+        return damage;
+    }
+
+    public final void getDamage(double damage) {
+        health -= damage;
+    }
+
+    public final void doSuperAttack(Gladiator enemy, int ATTACK_TYPE, int ATTACK_POINT) {
+        for (Action action : actionIsStart(Action.SUPER_ATTACK))
+            action.doAction(this, enemy);
+
+        superAttack.doAttack(enemy, ATTACK_TYPE, ATTACK_POINT);
+
+        for (Action action : actionIsEnd(Action.SUPER_ATTACK))
             action.doAction(this, enemy);
     }
 
-    public void doGetAttack(Gladiator enemy) {
-        for (Action action : action(ACTION_BLOCK))
-            action.doAction(this, enemy);
-
-        getAttack.doAction(this, enemy);
-
-        for (Action action : actionIsEnd(ACTION_ATTACK))
-            action.doAction(this, enemy);
+    public final boolean evade() {
+        return Math.random() < evadeChance;
     }
 }
