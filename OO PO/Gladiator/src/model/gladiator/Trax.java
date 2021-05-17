@@ -11,7 +11,7 @@ import model.weapon.Weapon;
 public class Trax extends Gladiator {
     public Trax(Protection protection, Weapon weapon) {
 
-        debuff = new Debuff(2) {
+        debuff = new Debuff(2, 0.3) {
             @Override
             public Action onActionStart(int actionType) {
                 if (actionType == Action.ATTACK) {
@@ -48,14 +48,17 @@ public class Trax extends Gladiator {
 
         block = new Block() {
             @Override
-            public double doBlock(Gladiator me, Gladiator enemy,double damage, int ATTACK_POINT) {
+            public double doBlock(Gladiator me, Gladiator enemy, double damage, int ATTACK_POINT, int ATTACK_TYPE) {
+                if (debuff.isEjected())
+                    enemy.getDebuff(debuff);
+
                 if (evade())
                     return 0;
                 else {
                     if (shield != null && shield.blocked())
-                        return shield.defend(me, enemy, damage);
+                        return shield.defend(me, enemy, damage, ATTACK_TYPE);
                     else if (protection != null) {
-                        return protection.defend(me, enemy,damage);
+                        return protection.defend(me, enemy, damage, ATTACK_TYPE);
                     } else
                         return damage;
                 }

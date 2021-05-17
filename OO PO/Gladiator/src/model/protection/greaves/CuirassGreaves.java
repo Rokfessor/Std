@@ -1,4 +1,9 @@
 package model.protection.greaves;
 
-public class CuirassGreaves {
+import model.protection.Protection;
+
+public class CuirassGreaves extends Protection {
+    public CuirassGreaves() {
+        super(1,1);
+    }
 }

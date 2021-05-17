@@ -9,6 +9,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.stage.Stage;
 import model.gamemanager.GameManager;
+import model.protection.Protection;
+import model.protection.ProtectionManager;
 
 import java.io.IOException;
 import java.net.URL;
@@ -37,12 +39,11 @@ public class ChooseMenuController implements Initializable {
     public ImageView gladiator2;
     public ImageView gladiator3;
     public ImageView gladiator4;
-    
+
     public ImageView weapon1;
     public ImageView weapon2;
     public ImageView weapon3;
     public ImageView weapon4;
-    
 
     public ImageView helmet1;
     public ImageView helmet2;
@@ -105,186 +106,158 @@ public class ChooseMenuController implements Initializable {
         ClipboardContent content = new ClipboardContent();
         content.putImage(image);
 
-        if (imageView.equals(gladiator1)) {
-            System.err.println("!");
-            content.putString("gladiator1");
-            dragboard.setContent(content);
-            return;
-        }
+        {
+            if (imageView.equals(gladiator1)) {
+                System.err.println("!");
+                content.putString("gladiator1");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(gladiator2)) {
-            content.putString("gladiator2");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(gladiator2)) {
+                content.putString("gladiator2");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(gladiator3)) {
-            content.putString("gladiator3");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(gladiator3)) {
+                content.putString("gladiator3");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(gladiator4)) {
-            content.putString("gladiator4");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(gladiator4)) {
+                content.putString("gladiator4");
+                dragboard.setContent(content);
+                return;
+            }
 
-        /*if (imageView.equals(skill1)){
-            content.putString("skill1");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(helmet1)) {
+                content.putString("helmet1");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(skill2)){
-            content.putString("skill2");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(helmet2)) {
+                content.putString("helmet2");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(skill3)){
-            content.putString("skill3");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(helmet3)) {
+                content.putString("helmet3");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(skill4)){
-            content.putString("skill4");
-            dragboard.setContent(content);
-            return;
-        }*/
+            if (imageView.equals(helmet4)) {
+                content.putString("helmet4");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(helmet1)) {
-            content.putString("helmet1");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(armor1)) {
+                content.putString("armor1");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(helmet2)) {
-            content.putString("helmet2");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(armor2)) {
+                content.putString("armor2");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(helmet3)) {
-            content.putString("helmet3");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(armor3)) {
+                content.putString("armor3");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(helmet4)) {
-            content.putString("helmet4");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(armor4)) {
+                content.putString("armor4");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(armor1)) {
-            content.putString("armor1");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(greaves1)) {
+                content.putString("greaves1");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(armor2)) {
-            content.putString("armor2");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(greaves2)) {
+                content.putString("greaves2");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(armor3)) {
-            content.putString("armor3");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(greaves3)) {
+                content.putString("greaves3");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(armor4)) {
-            content.putString("armor4");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(greaves4)) {
+                content.putString("greaves4");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(greaves1)) {
-            content.putString("greaves1");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(weapon1)) {
+                content.putString("weapon1");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(greaves2)) {
-            content.putString("greaves2");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(weapon2)) {
+                content.putString("weapon2");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(greaves3)) {
-            content.putString("greaves3");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(weapon3)) {
+                content.putString("weapon3");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(greaves4)) {
-            content.putString("greaves4");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(weapon4)) {
+                content.putString("weapon4");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(weapon1)) {
-            content.putString("weapon1");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(shield1)) {
+                content.putString("shield1");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(weapon2)) {
-            content.putString("weapon2");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(shield2)) {
+                content.putString("shield2");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(weapon3)) {
-            content.putString("weapon3");
-            dragboard.setContent(content);
-            return;
-        }
+            if (imageView.equals(shield3)) {
+                content.putString("shield3");
+                dragboard.setContent(content);
+                return;
+            }
 
-        if (imageView.equals(weapon4)) {
-            content.putString("weapon4");
-            dragboard.setContent(content);
-            return;
-        }
-
-        if (imageView.equals(shield1)) {
-            content.putString("shield1");
-            dragboard.setContent(content);
-            return;
-        }
-
-        if (imageView.equals(shield2)) {
-            content.putString("shield2");
-            dragboard.setContent(content);
-            return;
-        }
-
-        if (imageView.equals(shield3)) {
-            content.putString("shield3");
-            dragboard.setContent(content);
-            return;
-        }
-
-        if (imageView.equals(shield4)) {
-            content.putString("shield4");
-            dragboard.setContent(content);
+            if (imageView.equals(shield4)) {
+                content.putString("shield4");
+                dragboard.setContent(content);
+            }
         }
     }
 
     public void dragOver(DragEvent dragEvent) {
-        ImageView imageView = (ImageView)dragEvent.getSource();
+        ImageView imageView = (ImageView) dragEvent.getSource();
 
-        if (imageView.getImage() == null){
+        if (imageView.getImage() == null) {
             if ((imageView == player1Gladiator || imageView == player2Gladiator) && dragEvent.getDragboard().getString().contains("gladiator")) {
-                dragEvent.acceptTransferModes(TransferMode.COPY);
-                dragEvent.consume();
-                return;
-            }
-
-            if ((imageView == player1Skill || imageView == player2Skill) && dragEvent.getDragboard().getString().contains("skill")) {
                 dragEvent.acceptTransferModes(TransferMode.COPY);
                 dragEvent.consume();
                 return;
@@ -329,7 +302,49 @@ public class ChooseMenuController implements Initializable {
         dragEvent.setDropCompleted(true);
         dragEvent.consume();
 
-        if (imageView == player1Armor)
-            gameManager.setPlayer1Armor();
+        String type = dragEvent.getDragboard().getString();
+
+        if (type.contains("armor") || type.contains("greaves") || type.contains("helmet")) {
+            Protection protection = ProtectionManager.getProtection(type);
+
+            if (imageView == player1Helmet)
+                gameManager.setPlayer1Helmet(protection, type);
+
+            if (imageView == player1Armor)
+                gameManager.setPlayer1Armor(protection, type);
+
+            if (imageView == player1Greaves)
+                gameManager.setPlayer1Greaves(protection, type);
+
+            if (imageView == player1Shield)
+                gameManager.setPlayer2Armor(protection, type);
+
+            if (imageView == player2Helmet)
+                gameManager.setPlayer2Helmet(protection, type);
+
+            if (imageView == player2Armor)
+                gameManager.setPlayer2Armor(protection, type);
+
+            if (imageView == player2Greaves)
+                gameManager.setPlayer2Greaves(protection, type);
+
+            if (imageView == player2Shield)
+                gameManager.setPlayer2Armor(protection, type);
+
+        } else if (type.contains("weapon")) {
+
+            if (imageView == player1Weapon) {
+            }
+
+            if (imageView == player2Weapon) {
+            }
+
+        } else if (type.contains("gladiator")) {
+
+            if (imageView == player1Gladiator) {
+            }
+            if (imageView == player2Gladiator) {
+            }
+        }
     }
 }

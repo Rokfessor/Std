@@ -1,29 +1,20 @@
 package model.protection.armor;
 
 import model.actions.Action;
+import model.actions.DefendAction;
 import model.gladiator.Gladiator;
 import model.protection.Protection;
 import model.utils.Utils;
 
 public class PlatemailArmor extends Protection {
     public PlatemailArmor() {
-        super(1,1,1);
+        super(0.8,0.02);
 
-        action = new Action() {
+        action = new DefendAction() {
             @Override
-            public void doAction(Gladiator me, Gladiator enemy) {
-                enemy.getDamage(3);
+            public void doAction(Gladiator me, Gladiator enemy, int ATTACK_TYPE, double damage) {
+                me.weapon.damage = Utils.round(me.weapon.damage + 0.04);
             }
         };
-    }
-
-    @Override
-    public double defend(Gladiator me, Gladiator enemy, double damage) {
-        damage = Utils.round((1 - integrity) * damage);
-        integrity = Utils.round(integrity - integrityCoef);
-        if (integrity < 0)
-            integrity = 0;
-
-        return damage;
     }
 }

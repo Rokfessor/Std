@@ -1,4 +1,9 @@
 package model.protection.armor;
 
-public class BladeArmor {
+import model.protection.Protection;
+
+public class BladeArmor extends Protection {
+    public BladeArmor() {
+        super(1,1);
+    }
 }

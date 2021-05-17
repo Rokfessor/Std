@@ -1,13 +1,13 @@
 package model.actions;
 
-import model.gladiator.Gladiator;
-
 public abstract class Debuff {
     public int count;
     public boolean first = true;
+    public double chance;
 
-    public Debuff(int count) {
+    public Debuff(int count, double chance) {
         this.count = count;
+        this.chance = chance;
     }
 
     public boolean isActive() {
@@ -17,4 +17,8 @@ public abstract class Debuff {
     abstract public Action onActionStart(int actionType);
 
     abstract public Action onActionEnd(int actionType);
+
+    public final boolean isEjected() {
+        return Math.random() < chance;
+    }
 }

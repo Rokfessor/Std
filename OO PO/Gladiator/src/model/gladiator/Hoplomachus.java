@@ -18,7 +18,7 @@ public class Hoplomachus extends Gladiator {
         this.weapon = weapon;
         damage = 5;
 
-        debuff = new Debuff(5) {
+        debuff = new Debuff(5, 0.3) {
             @Override
             public Action onActionStart(int actionType) {
                 if (actionType == Action.ATTACK) {
@@ -56,6 +56,9 @@ public class Hoplomachus extends Gladiator {
         attack = new Attack() {
             @Override
             public double doAttack(Gladiator enemy, int ATTACK_TYPE, int ATTACK_POINT) {
+                if (debuff.isEjected())
+                    enemy.getDebuff(debuff);
+
                 if (ATTACK_TYPE == Attack.WEAPON) {
                     if (weapon.missed())
                         return 0;
@@ -69,25 +72,25 @@ public class Hoplomachus extends Gladiator {
 
         block = new Block() {
             @Override
-            public double doBlock(Gladiator me, Gladiator enemy, double damage, int ATTACK_POINT) {
+            public double doBlock(Gladiator me, Gladiator enemy, double damage, int ATTACK_POINT, int ATTACK_TYPE) {
                 if (evade())
                     return 0;
                 else {
                     if (shield != null && shield.blocked())
-                        return shield.defend(me, enemy,damage);
+                        return shield.defend(me, enemy,damage, ATTACK_TYPE);
                     else {
                         switch (ATTACK_POINT) {
                             case Attack.HEAD_ATTACK -> {
                                 if (helmet != null)
-                                    damage = helmet.defend(me, enemy, damage);
+                                    damage = helmet.defend(me, enemy, damage, ATTACK_TYPE);
                             }
                             case Attack.BODY_ATTACK -> {
                                 if (helmet != null)
-                                    damage = armor.defend(me, enemy, damage);
+                                    damage = armor.defend(me, enemy, damage, ATTACK_TYPE);
                             }
                             case Attack.LEG_ATTACK -> {
                                 if (helmet != null)
-                                    damage = greaves.defend(me, enemy, damage);
+                                    damage = greaves.defend(me, enemy, damage, ATTACK_TYPE);
                             }
                         }
                         return damage;

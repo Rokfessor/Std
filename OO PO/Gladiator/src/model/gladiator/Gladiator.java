@@ -21,7 +21,7 @@ public abstract class Gladiator {
 
     public List<Debuff> debuffs = new ArrayList<>();
 
-    public Debuff debuff ;
+    public Debuff debuff;
     public Attack attack;
     public Attack superAttack;
     public Block block;
@@ -39,6 +39,10 @@ public abstract class Gladiator {
         }
 
         return list;
+    }
+
+    public void getDebuff(Debuff debuff) {
+        debuffs.add(debuff);
     }
 
     public List<Action> actionIsEnd(int actionType) {
@@ -60,7 +64,7 @@ public abstract class Gladiator {
             action.doAction(this, enemy);
 
         double damage = attack.doAttack(enemy, ATTACK_TYPE, ATTACK_POINT);
-        double blockedDamage = enemy.doBlock(this, damage, ATTACK_POINT);
+        double blockedDamage = enemy.doBlock(this, damage, ATTACK_POINT, ATTACK_TYPE);
         enemy.getDamage(blockedDamage);
 
         //TODO добавить skill
@@ -69,11 +73,11 @@ public abstract class Gladiator {
             action.doAction(this, enemy);
     }
 
-    public final double doBlock(Gladiator enemy, double damage, int ATTACK_POINT) {
+    public final double doBlock(Gladiator enemy, double damage, int ATTACK_POINT, int ATTACK_TYPE) {
         for (Action action : actionIsStart(Action.BLOCK))
             action.doAction(this, enemy);
 
-        damage = block.doBlock(this, enemy, damage, ATTACK_POINT);
+        damage = block.doBlock(this, enemy, damage, ATTACK_POINT, ATTACK_TYPE);
 
         for (Action action : actionIsEnd(Action.BLOCK))
             action.doAction(this, enemy);

@@ -1,30 +1,19 @@
 package model.protection.greaves;
 
-import model.actions.Action;
+import model.actions.DefendAction;
 import model.gladiator.Gladiator;
 import model.protection.Protection;
 import model.utils.Utils;
 
 public class PlatemailGreaves extends Protection {
     public PlatemailGreaves() {
-        super(0.3,1,0.05);
+        super(0.3, 0.02);
 
-        action = new Action() {
+        action = new DefendAction() {
             @Override
-            public void doAction(Gladiator me, Gladiator enemy) {
+            public void doAction(Gladiator me, Gladiator enemy, int ATTACK_TYPE, double damage) {
                 me.weapon.damage = Utils.round(me.weapon.damage + 0.04);
             }
         };
-    }
-
-    @Override
-    public double defend(Gladiator me, Gladiator enemy, double damage) {
-        if (integrity != 0) {
-            damage = Utils.round(integrity * damage);
-            integrity = Utils.round(integrity - integrityCoef);
-            if (integrity < 0)
-                integrity = 0;
-        }
-        return damage;
     }
 }
