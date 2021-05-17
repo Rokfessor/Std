@@ -74,7 +74,11 @@ public class Reader extends Thread {
                     Thread.sleep(Timer.calcOtnHours(homeRead));
 
                     while (!Library.isOpen) {
-                        Thread.sleep(library.timeUntilOpen());
+                        long t = library.timeUntilOpen();
+                        if (t <= 0) {
+                            t = Timer.calcOtnHours(1);
+                        }
+                        Thread.sleep(t);
                     }
 
                     System.err.println(Timer.getCurrentTime() + " " + name + " вернул книги:\n" + takenBooks + "\n");

@@ -68,7 +68,7 @@ public class Regex {
         String[] lines = text.split(" ");
         List<Integer> res = new ArrayList<>();
         for (int i = 0; i < lines.length; i++) {
-            if (lines[i].matches("РЕГУЛЯРКА"))
+            if (lines[i].matches("^((01)*|(10)*|(0110)*|(1001)*)*$"))
                 res.add(i);
         }
         return res;
@@ -78,7 +78,7 @@ public class Regex {
         String[] lines = text.split(" ");
         List<Integer> res = new ArrayList<>();
         for (int i = 0; i < lines.length; i++) {
-            if (lines[i].matches("РЕГУЛЯРКА"))
+            if (lines[i].matches("^((101|1)*(1100)+0?(011|1)*2)*5$"))
                 res.add(i);
         }
         return res;
@@ -94,13 +94,7 @@ public class Regex {
         return res;
     }
 
-    public static List<Integer> t51(String text){
-        String[] lines = text.split(" ");
-        List<Integer> res = new ArrayList<>();
-        for (int i = 0; i < lines.length; i++) {
-            if (lines[i].matches("[0-9]{1,10}(\\.|,)?[0-9]{0,2}([^0-9]){0,20}"))
-                res.add(i);
-        }
-        return res;
+    public static boolean t51(String text){
+        return text.matches("([^0-9]){0,20}[0-9]{1,10}([.,])?[0-9]{0,2}([^0-9]){0,20}");
     }
 }

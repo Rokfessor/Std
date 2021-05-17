@@ -1,12 +1,10 @@
 package controller;
 
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import controller.modei.Rеgex;
 import model.Regex;
 import model.Utils;
 import org.fxmisc.richtext.StyleClassedTextField;
-
-import java.util.Locale;
 
 public class Controller {
     public StyleClassedTextField tf11;
@@ -168,7 +166,7 @@ public class Controller {
         } else {*/
         String line = tf33.getText();
         tf33.setStyleClass(0, tf33.getLength(), "red");
-        for (Integer i : Regex.t33(line)) {
+        for (Integer i : Rеgex.t33(line)) {
             int start = Utils.getStartIndex(i, line);
             int end = line.length();
             if (start + 1 < line.length() - 1)
@@ -199,15 +197,7 @@ public class Controller {
     public void tf51Typed(KeyEvent keyEvent) {
         String line = tf51.getText();
         tf51.setStyleClass(0, tf51.getLength(), "red");
-        for (Integer i : Regex.t51(line)) {
-            int start = Utils.getStartIndex(i, line);
-            int end = line.length();
-            if (start + 1 < line.length() - 1)
-                end = line.indexOf(" ", start + 1);
-            if (end == -1)
-                end = line.length();
-
-            tf51.setStyleClass(start, end, "green");
-        }
+        if (Regex.t51(line))
+            tf51.setStyleClass(0, line.length(), "green");
     }
 }
