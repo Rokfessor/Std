@@ -7,7 +7,7 @@ public class Main {
         Calculator.setListener(gui);
         gui.setSize(new Dimension(200, 450));
         gui.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        gui.setResizable(false);
+        //gui.setResizable(false);
         gui.setVisible(true);
     }
 }

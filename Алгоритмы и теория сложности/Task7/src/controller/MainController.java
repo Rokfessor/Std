@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import model.Calculator;
+import model.Holder;
 import model.Obj;
 import model.Utils;
 
@@ -41,7 +42,8 @@ public class MainController implements Initializable {
         setCostCol.setCellValueFactory(new PropertyValueFactory<>("cost"));
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
 
-        tableSet.getItems().addAll(new Obj("Ноутбук", 3, 2000),
+        tableSet.getItems().addAll(
+                new Obj("Ноутбук", 3, 2000),
                 new Obj("Пила", 4, 3000),
                 new Obj("Гитара", 1, 1500));
     }
@@ -115,7 +117,8 @@ public class MainController implements Initializable {
         }
 
         if (flag) {
-            int[][] res = Calculator.calculate(list, weight);
+            Holder holder = Calculator.calculate(list, weight);
+            int[][] res = holder.res;
 
             resTable.getColumns().remove(0, resTable.getColumns().size());
 
@@ -127,7 +130,7 @@ public class MainController implements Initializable {
                 resTable.getColumns().add(column);
             }
 
-            resLabel.setText("Решение: " + res[res.length - 1][res[0].length - 1]);
+            resLabel.setText("Решение: " + res[res.length - 1][res[0].length - 1] + " " + holder.name);
             resTable.setItems(FXCollections.observableList(Arrays.asList(res)));
 
             nameTable.setItems(tableSet.getItems());

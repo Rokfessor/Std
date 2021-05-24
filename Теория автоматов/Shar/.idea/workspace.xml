@@ -2,52 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/Gladiator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/src/model/actions/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/src/model/actions/Debuff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/src/model/gamemanager/GameManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/src/model/gladiator/Gladiator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/src/model/gladiator/Hoplomachus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/src/model/gladiator/Trax.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/src/model/protection/Protection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/src/model/utils/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/src/model/weapon/Axe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/src/model/weapon/Sword.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/src/model/weapon/Weapon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Clock/Clock.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Regex/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Regex/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Regex/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Regex/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Regex/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Regex/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Regex/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Regex/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Regex/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Regex/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Regex/Regex.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task2/CalcWithThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task2/CalcWithThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task5/CarsProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task5/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task5/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task5/Owner.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/out/production/Tasks/Task5/Owner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/src/Task2/CalcWithThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/src/Task2/CalcWithThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/src/Task5/CarsProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/src/Task5/CallsProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/src/Task5/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/src/Task5/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/src/Task5/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA многопоточка/Tasks/src/Task5/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_sdk_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/src/model/Holder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/out/production/Task7/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/out/production/Task7/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/out/production/Task7/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/out/production/Task7/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/out/production/Task7/model/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/out/production/Task7/model/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/out/production/Task7/model/Obj.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/out/production/Task7/model/Obj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/out/production/Task7/model/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/out/production/Task7/model/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/src/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/src/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/src/model/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task7/src/model/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/controller/MainController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/controller/MainController$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/controller/MainController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/controller/MainController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/model/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/model/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/model/Obj.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/model/Obj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/model/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/model/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/view/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/out/production/JavaFxApplication/view/mainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/resources/view/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/resources/view/mainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/src/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/src/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/src/model/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Task8/src/model/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Лекции.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Алгоритмы и теория сложности/Лекции.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../БЖД/Лекции.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../БЖД/Лекции.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Shar.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Экономика/Лекции.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Экономика/Лекции.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Painter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Painter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Res.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resul.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
