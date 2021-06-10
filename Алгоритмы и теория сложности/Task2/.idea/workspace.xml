@@ -2,17 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8211aa68-e7ff-4f41-bb7b-db5991eef08f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/model/gamemanager/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/model/gamemanager/GameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/model/gladiator/Gladiator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/model/gladiator/Gladiator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/model/gladiator/Hoplomachus.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/model/gladiator/Hoplomachus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/model/gladiator/Trax.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/model/gladiator/Trax.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/model/skills/Debuff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/model/skills/SuperAttack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/model/weapon/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/model/weapon/Weapon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/view/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/out/production/Gladiator/view/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../OO PO/Gladiator/resources/view/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/resources/view/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../OO PO/Gladiator/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../OO PO/Gladiator/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task7/src/model/Holder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task7/out/production/Task7/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task7/out/production/Task7/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task7/out/production/Task7/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task7/out/production/Task7/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task7/out/production/Task7/model/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task7/out/production/Task7/model/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task7/out/production/Task7/model/Obj.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task7/out/production/Task7/model/Obj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task7/out/production/Task7/model/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task7/out/production/Task7/model/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task7/src/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task7/src/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task7/src/model/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task7/src/model/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/controller/MainController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/controller/MainController$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/controller/MainController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/controller/MainController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/model/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/model/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/model/Obj.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/model/Obj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/model/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/model/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/view/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task8/out/production/JavaFxApplication/view/mainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task8/resources/view/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task8/resources/view/mainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task8/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task8/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task8/src/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task8/src/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task8/src/model/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task8/src/model/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Лекции.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Лекции.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../БЖД/Лекции.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../БЖД/Лекции.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Теория автоматов/Shar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Теория автоматов/Shar/out/production/Shar/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/out/production/Shar/Handler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Теория автоматов/Shar/out/production/Shar/Painter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/out/production/Shar/Painter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Теория автоматов/Shar/out/production/Shar/Res.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Теория автоматов/Shar/src/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/src/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Теория автоматов/Shar/src/Painter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/src/Painter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Теория автоматов/Shar/src/Res.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Теория автоматов/Shar/src/Resul.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

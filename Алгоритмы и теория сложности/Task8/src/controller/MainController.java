@@ -3,14 +3,12 @@ package controller;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.util.Callback;
+import model.Calc;
 import model.Calculator;
 
 import java.util.Arrays;
@@ -20,8 +18,7 @@ public class MainController {
     public TextField maxWeightTF;
     public TextField weightTF;
     public TableView<boolean[]> resTable;
-    public TableColumn<String, char[]> nameColumn;
-    public TableView<String> weightNameTable;
+    public Label resLabel;
 
     public void digitCheckWei(KeyEvent keyEvent) {
         if (!(keyEvent.getCode().isDigitKey() || keyEvent.getCode().equals(KeyCode.SPACE)))
@@ -43,12 +40,12 @@ public class MainController {
         }
 
         boolean[][] res = Calculator.calculate(mass, Integer.parseInt(maxWeightTF.getText()));
-
+        System.err.println(Arrays.deepToString(res));
         for (int i = 0; i < res[0].length - 1; i++) {
             TableColumn<boolean[], Boolean> column = new TableColumn<>(mass[i] + "");
 
             int finalI = i;
-            column.setCellValueFactory(p -> new SimpleObjectProperty<>(p.getValue()[finalI]));
+            column.setCellValueFactory(p -> new SimpleObjectProperty<>(p.getValue()[finalI + 1]));
 
             column.setCellFactory(new Callback<>() {
                 @Override
@@ -73,5 +70,10 @@ public class MainController {
         }
 
         resTable.setItems(FXCollections.observableList(Arrays.asList(res)));
+        try {
+            resLabel.setText(Calc.calculate(Integer.parseInt(maxWeightTF.getText()), mass));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

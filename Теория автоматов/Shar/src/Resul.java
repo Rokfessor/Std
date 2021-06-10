@@ -1,4 +1,4 @@
-public class Res {
+public class Resul {
     public boolean isR1() {
         return r1;
     }
@@ -9,7 +9,7 @@ public class Res {
 
     private boolean r1, r2;
 
-    public Res(boolean r1, boolean r2) {
+    public Resul(boolean r1, boolean r2) {
         this.r1 = r1;
         this.r2 = r2;
     }

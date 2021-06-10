@@ -14,6 +14,9 @@ public class Painter {
     private int seconds;
     private Handler handler;
     private boolean flag= false;
+    private boolean x1State = false;
+    private boolean x2State = false;
+    private boolean x3State = false;
     private final int xOffset = 80;
     private final int yOffset = 80;
 
@@ -30,14 +33,39 @@ public class Painter {
         } else if (transition != null && transition.getStatus() == Animation.Status.PAUSED) {
             transition.play();
         } else {
+            Duration duration = Duration.millis((seconds * 1000f) / 4);
+            handler.randomize();
+            ParallelTransition randTrans = new ParallelTransition();
+            if (handler.x1 != x1State) {
+                x1State = handler.x1;
+                RotateTransition r1 = new RotateTransition(duration, line1);
+                r1.setByAngle(handler.x1 ? 90 : -90);
+                randTrans.getChildren().add(r1);
+            }
+
+            if (handler.x2 != x2State) {
+                x2State = handler.x2;
+                RotateTransition r2 = new RotateTransition(duration, line2);
+                r2.setByAngle(handler.x1 ? 90 : -90);
+                randTrans.getChildren().add(r2);
+            }
+
+            if (handler.x3 != x3State) {
+                x3State = handler.x3;
+                RotateTransition r3 = new RotateTransition(duration, line3);
+                r3.setByAngle(handler.x3 ? 90 : -90);
+                randTrans.getChildren().add(r3);
+            }
+
+            randTrans.play();
+
             boolean left = flag;
             flag = !flag;
             int x = left ? 110 : 280;
             int y = 30;
-            Res res = handler.calcStep(left);
-
+            Resul resul = handler.calcStep(left);
+            System.err.println(resul.isR1() + " " + resul.isR2() + " == " + handler.x1 + " " + handler.x2 + " " + handler.x3);
             transition = new SequentialTransition();
-            Duration duration = Duration.millis((seconds * 1000f) / 4);
             circle = new Circle();
             circle.setCenterX(x);
             circle.setCenterY(y);
@@ -53,31 +81,43 @@ public class Painter {
 
             //1 угол
             boolean center;
-            x = res.isR1() ? x + xOffset : x - xOffset;
+            x = resul.isR1() ? x + xOffset : x - xOffset;
             y += yOffset;
             ParallelTransition p_st1 = new ParallelTransition();
             RotateTransition r_st1;
-
             r_st1 = left ? new RotateTransition(duration, line1) : new RotateTransition(duration, line3);
-            r_st1.setByAngle(res.isR1() ? 90 : -90);
-            center = (left == res.isR1());
+            r_st1.setByAngle(resul.isR1() ? 90 : -90);
+
+            if (left ? x1State == handler.x1 : x3State == handler.x3) {
+                r_st1 = null;
+            }
+            x1State = handler.x1;
+            x3State = handler.x3;
+
+            center = (left == resul.isR1());
 
             KeyValue toX_st1 = new KeyValue(circle.centerXProperty(), x);
             KeyValue toY_st1 = new KeyValue(circle.centerYProperty(), y);
             Timeline t_st1 = new Timeline();
             t_st1.getKeyFrames().add(new KeyFrame(duration, toX_st1, toY_st1));
+            if (r_st1 != null)
+                p_st1.getChildren().add(r_st1);
             p_st1.getChildren().add(t_st1);
-            p_st1.getChildren().add(r_st1);
             transition.getChildren().add(p_st1);
 
             //2 угол
             ParallelTransition p_st2 = new ParallelTransition();
+
             if (center) {
                 RotateTransition r_st2 = new RotateTransition(duration, line2);
-                r_st2.setByAngle(res.isR2() ? 90 : -90);
-                p_st2.getChildren().add(r_st2);
+                r_st2.setByAngle(resul.isR2() ? 90 : -90);
+                if (x2State == handler.x2)
+                    r_st2 = null;
+                x2State = handler.x2;
+                if (r_st2 != null)
+                    p_st2.getChildren().add(r_st2);
             }
-            x = res.isR2() ? x + xOffset : x - xOffset;
+            x = resul.isR2() ? x + xOffset : x - xOffset;
             y += yOffset;
 
             KeyValue toX_st2 = new KeyValue(circle.centerXProperty(), x);
