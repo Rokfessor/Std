@@ -1,9 +1,10 @@
 package model.weapon;
 
-import model.gladiator.Gladiator;
+import javafx.scene.image.Image;
 
 public class Sword extends Weapon {
     public Sword() {
-        super(15, Weapon.DEFAULT_INTEGRITY, Weapon.DEFAILT_INTEGRITY_COEF, Weapon.DEFAULT_MISS_CHANCE);
+        super(15, Weapon.DEFAULT_INTEGRITY, 0.65, "Меч");
+        image = new Image("sprites/weapon1.png", 300,300,false,false);
     }
 }

@@ -1,12 +1,10 @@
 package model.weapon;
 
-import model.gladiator.Gladiator;
+import javafx.scene.image.Image;
 
 public class Axe extends Weapon {
-
     public Axe() {
-        super(10, DEFAULT_INTEGRITY, DEFAILT_INTEGRITY_COEF, DEFAULT_MISS_CHANCE);
+        super(12, DEFAULT_INTEGRITY, 0.5, "Топор");
+        image = new Image("sprites/weapon2.png", 300,300,false,false);
     }
-
-
 }

@@ -1,4 +1,6 @@
-package model.protection;
+package model.protection.shield;
+
+import model.protection.Protection;
 
 public class Shield extends Protection {
     public Shield() {

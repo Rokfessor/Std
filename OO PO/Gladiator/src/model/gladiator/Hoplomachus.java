@@ -1,22 +1,18 @@
 package model.gladiator;
 
+import javafx.scene.image.Image;
 import model.actions.Action;
 import model.actions.Attack;
 import model.actions.Block;
 import model.actions.Debuff;
-import model.protection.Protection;
-import model.protection.Shield;
-import model.weapon.Weapon;
+import model.gamemanager.GameManager;
 
 public class Hoplomachus extends Gladiator {
-    public Hoplomachus(Protection helmet, Protection armor, Protection greaves, Shield shield, Weapon weapon) {
-        health = 100;
-        this.helmet = helmet;
-        this.armor = armor;
-        this.greaves = greaves;
-        this.shield = shield;
-        this.weapon = weapon;
+    public Hoplomachus() {
+        health = maxHealth = 100;
         damage = 5;
+        name = "Гопломак";
+        image = new Image("sprites/gladiator1.png", 170, 170, false, false);
 
         debuff = new Debuff(5, 0.3) {
             @Override
@@ -26,8 +22,10 @@ public class Hoplomachus extends Gladiator {
                         return new Action() {
                             @Override
                             public void doAction(Gladiator me, Gladiator enemy) {
-                                if (enemy.weapon != null)
+                                if (enemy.weapon != null) {
                                     enemy.weapon.damage -= 5;
+                                    GameManager.getInstance().printAction(enemy.name + ": урон от атаки снижен на 5");
+                                }
                             }
                         };
                     }
@@ -51,14 +49,16 @@ public class Hoplomachus extends Gladiator {
                 }
                 return null;
             }
+
+            @Override
+            public String toString() {
+                return "гопломаковская ксреньт";
+            }
         };
 
         attack = new Attack() {
             @Override
             public double doAttack(Gladiator enemy, int ATTACK_TYPE, int ATTACK_POINT) {
-                if (debuff.isEjected())
-                    enemy.getDebuff(debuff);
-
                 if (ATTACK_TYPE == Attack.WEAPON) {
                     if (weapon.missed())
                         return 0;
@@ -73,29 +73,24 @@ public class Hoplomachus extends Gladiator {
         block = new Block() {
             @Override
             public double doBlock(Gladiator me, Gladiator enemy, double damage, int ATTACK_POINT, int ATTACK_TYPE) {
-                if (evade())
-                    return 0;
-                else {
-                    if (shield != null && shield.blocked())
-                        return shield.defend(me, enemy,damage, ATTACK_TYPE);
-                    else {
-                        switch (ATTACK_POINT) {
-                            case Attack.HEAD_ATTACK -> {
-                                if (helmet != null)
-                                    damage = helmet.defend(me, enemy, damage, ATTACK_TYPE);
-                            }
-                            case Attack.BODY_ATTACK -> {
-                                if (helmet != null)
-                                    damage = armor.defend(me, enemy, damage, ATTACK_TYPE);
-                            }
-                            case Attack.LEG_ATTACK -> {
-                                if (helmet != null)
-                                    damage = greaves.defend(me, enemy, damage, ATTACK_TYPE);
-                            }
-                        }
-                        return damage;
+                if (debuff.isEjected())
+                    enemy.getDebuff(debuff);
+
+                switch (ATTACK_POINT) {
+                    case Attack.HEAD_ATTACK -> {
+                        if (helmet != null)
+                            damage = helmet.defend(me, enemy, damage, ATTACK_TYPE);
+                    }
+                    case Attack.BODY_ATTACK -> {
+                        if (armor != null)
+                            damage = armor.defend(me, enemy, damage, ATTACK_TYPE);
+                    }
+                    case Attack.LEG_ATTACK -> {
+                        if (greaves != null)
+                            damage = greaves.defend(me, enemy, damage, ATTACK_TYPE);
                     }
                 }
+                return damage;
             }
         };
 

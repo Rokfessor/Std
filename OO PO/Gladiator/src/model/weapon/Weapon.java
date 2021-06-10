@@ -1,29 +1,48 @@
 package model.weapon;
 
+import javafx.scene.image.Image;
+import model.gamemanager.GameManager;
 import model.utils.Utils;
 
 public abstract class Weapon {
-    public static double DEFAULT_DAMAGE = 10, DEFAULT_INTEGRITY = 1, DEFAILT_INTEGRITY_COEF = 0.1, DEFAULT_MISS_CHANCE = 0.05;
+    public static double DEFAULT_DAMAGE = 10, DEFAULT_INTEGRITY = 1, DEFAULT_MISS_CHANCE = 0.05;
 
     public double damage;
     public double integrity ;
-    public double integrityCoef;
     public double missChance;
+    public String name;
+    public Image image;
+
+    GameManager gameManager = GameManager.getInstance();
 
     public double calcDamage() {
-        double damage = Utils.round(this.damage * integrity);
-        integrity = Utils.round(integrity - integrityCoef);
+        damage = Utils.round(this.damage - integrity);
+        if (damage < 1)
+            damage = 1;
         return damage;
     }
 
     public final boolean missed() {
-        return Math.random() < missChance;
+        if (Math.random() < missChance) {
+            gameManager.printAction(name + " ПРОМАХ!");
+            return true;
+        }
+        return false;
     }
 
-    public Weapon(double damage, double integrity, double integrityCoef, double missChance) {
+    public Weapon(double damage, double integrity, double missChance, String name) {
         this.damage = damage;
         this.integrity = integrity;
-        this.integrityCoef = integrityCoef;
         this.missChance = missChance;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Weapon{" +
+                "damage=" + damage +
+                ", integrity=" + integrity +
+                ", missChance=" + missChance +
+                '}';
     }
 }

@@ -1,15 +1,18 @@
 package model.gladiator;
 
+import javafx.scene.image.Image;
 import model.actions.Action;
 import model.actions.Attack;
 import model.actions.Block;
 import model.actions.Debuff;
-import model.protection.Protection;
-import model.utils.Utils;
-import model.weapon.Weapon;
+import model.gamemanager.GameManager;
 
 public class Trax extends Gladiator {
-    public Trax(Protection protection, Weapon weapon) {
+    public Trax() {
+        health = maxHealth = 80;
+        damage = 3;
+        name = "Тракс";
+        image = new Image("sprites/gladiator2.png", 170, 170, false, false);
 
         debuff = new Debuff(2, 0.3) {
             @Override
@@ -19,7 +22,10 @@ public class Trax extends Gladiator {
                     return new Action() {
                         @Override
                         public void doAction(Gladiator me, Gladiator enemy) {
-                            me.health += 10;
+                            GameManager.getInstance().printAction(name + ": Здоровье поменяно");
+                            double temp = me.health;
+                            me.health = enemy.health;
+                            enemy.health = temp;
                         }
                     };
                 }
@@ -35,6 +41,9 @@ public class Trax extends Gladiator {
         attack = new Attack() {
             @Override
             public double doAttack(Gladiator enemy, int ATTACK_TYPE, int ATTACK_POINT) {
+                if (debuff.isEjected())
+                    enemy.getDebuff(debuff);
+
                 if (ATTACK_TYPE == Attack.WEAPON) {
                     if (weapon.missed())
                         return 0;
@@ -49,27 +58,21 @@ public class Trax extends Gladiator {
         block = new Block() {
             @Override
             public double doBlock(Gladiator me, Gladiator enemy, double damage, int ATTACK_POINT, int ATTACK_TYPE) {
-                if (debuff.isEjected())
-                    enemy.getDebuff(debuff);
-
-                if (evade())
-                    return 0;
-                else {
-                    if (shield != null && shield.blocked())
-                        return shield.defend(me, enemy, damage, ATTACK_TYPE);
-                    else if (protection != null) {
-                        return protection.defend(me, enemy, damage, ATTACK_TYPE);
-                    } else
-                        return damage;
+                switch (ATTACK_POINT) {
+                    case Attack.HEAD_ATTACK -> {
+                        if (helmet != null)
+                            damage = helmet.defend(me, enemy, damage, ATTACK_TYPE);
+                    }
+                    case Attack.BODY_ATTACK -> {
+                        if (armor != null)
+                            damage = armor.defend(me, enemy, damage, ATTACK_TYPE);
+                    }
+                    case Attack.LEG_ATTACK -> {
+                        if (greaves != null)
+                            damage = greaves.defend(me, enemy, damage, ATTACK_TYPE);
+                    }
                 }
-            }
-        };
-
-        superAttack = new Attack() {
-            @Override
-            public double doAttack(Gladiator enemy, int ATTACK_TYPE, int ATTACK_POINT) {
-                getDamage(Utils.round(health * 0.5));
-                return Utils.round(enemy.health * 0.5);
+                return damage;
             }
         };
     }

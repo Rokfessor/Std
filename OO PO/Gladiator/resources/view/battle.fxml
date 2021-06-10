@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.web.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BattleController">
+<VBox fx:id="vBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BattleController">
    <children>
-      <SplitPane dividerPositions="0.8" orientation="VERTICAL" prefHeight="720.0" prefWidth="1280.0">
+      <SplitPane dividerPositions="0.8" orientation="VERTICAL" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: transparent;">
         <items>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox maxWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0">
                <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="400.0" HBox.hgrow="SOMETIMES">
                      <children>
-                        <VBox prefHeight="58.0" prefWidth="440.0" />
+                        <fx:include fx:id="gladiatorAnimation1" source="gladiatorAnimation.fxml" />
+
                      </children></VBox>
                   <VBox prefHeight="562.0" prefWidth="387.0">
                      <children>
@@ -30,7 +32,6 @@
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
                           </columnConstraints>
                           <rowConstraints>
-                              <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
                             <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
@@ -60,102 +61,89 @@
                                     <Image url="@../icons/sword.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
                                  <image>
                                     <Image url="@../icons/helmet.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../icons/armor.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
                                  <image>
-                                    <Image url="@../icons/armor.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
-                                 <image>
                                     <Image url="@../icons/leg.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="3">
-                                 <image>
-                                    <Image url="@../icons/helmet.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="4">
-                                 <image>
-                                    <Image url="@../icons/armor.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="5">
-                                 <image>
-                                    <Image url="@../icons/leg.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
-                                 <image>
-                                    <Image url="@../icons/shield.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="2">
                                  <image>
-                                    <Image url="@../icons/shield.png" />
+                                    <Image url="@../icons/helmet.png" />
                                  </image>
                               </ImageView>
-                              <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-image: url('/icons/biceps.png');" text="рука" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.vgrow="ALWAYS" />
-                              <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="орудие" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                              <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="орудие" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-                              <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="рука" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-                              <Label text="Label" GridPane.columnIndex="1" />
-                              <Label text="Label" GridPane.columnIndex="5" />
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../icons/armor.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                                 <image>
+                                    <Image url="@../icons/leg.png" />
+                                 </image>
+                              </ImageView>
+                              <Button mnemonicParsing="false" onAction="#player1Attack" prefHeight="34.0" prefWidth="60.0" style="-fx-background-image: url('/icons/biceps.png');" text="рука" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.vgrow="ALWAYS" />
+                              <Button mnemonicParsing="false" onAction="#player1WeaponAttack" prefHeight="34.0" prefWidth="60.0" text="орудие" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Button mnemonicParsing="false" onAction="#player2WeaponAttack" prefHeight="33.0" prefWidth="60.0" text="орудие" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                              <Button mnemonicParsing="false" onAction="#player2Attack" prefHeight="32.0" prefWidth="60.0" text="рука" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                              <Label fx:id="player1Damage" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <Label fx:id="player2Damage" GridPane.columnIndex="5">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
                                  <image>
                                     <Image url="@../icons/heart.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="5">
                                  <image>
                                     <Image url="@../icons/heart.png" />
                                  </image>
                               </ImageView>
-                              <ProgressBar fx:id="player1HealthBar" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6" />
-                              <ProgressBar fx:id="player2HealthBar" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="6" />
-                              <ProgressBar fx:id="player1HealthBar1" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-                              <ProgressBar fx:id="player1HealthBar2" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-                              <ProgressBar fx:id="player1HealthBar3" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-                              <ProgressBar fx:id="player1HealthBar4" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                              <ProgressBar fx:id="player1HealthBar5" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                              <ProgressBar fx:id="player1HealthBar6" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-                              <ProgressBar fx:id="player1HealthBar7" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-                              <ProgressBar fx:id="player1HealthBar8" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label text="Label" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <ProgressBar fx:id="player1HealthBar" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                              <ProgressBar fx:id="player2HealthBar" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                              <ProgressBar fx:id="player1GreavesBar" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                              <ProgressBar fx:id="player1ArmorBar" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                              <ProgressBar fx:id="player1HelmetBar" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                              <ProgressBar fx:id="player2HelmetBar" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                              <ProgressBar fx:id="player2ArmorBar" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                              <ProgressBar fx:id="player2GreavesBar" prefHeight="39.0" prefWidth="112.0" progress="0.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                              <Label fx:id="player1WeaponDamage" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <Label fx:id="player2WeaponDamage" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
                            </children>
                         </GridPane>
                      </children>
                   </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="400.0" HBox.hgrow="NEVER">
                      <children>
-                        <VBox prefHeight="60.0" prefWidth="440.0" />
+                        <fx:include fx:id="gladiatorAnimation2" source="gladiatorAnimation.fxml" />
                      </children></VBox>
                </children></HBox>
-            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+            <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="200.0">
                <padding>
                   <Insets bottom="5.0" left="5.0" top="5.0" />
                </padding>
                <content>
-                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
-                     <children>
-                        <Label text="Label" />
-                        <Label text="Label" />
-                        <Label text="Label" />
-                        <Label text="Label" />
-                        <Label text="Label" />
-                        <Label text="Label" />
-                        <Label text="Label" />
-                        <Label text="Label" />
-                        <Label text="Label" />
-                        <Label text="Label" />
-                        <Label text="Label" />
-                     </children>
+                  <VBox prefHeight="133.0" prefWidth="1235.0" spacing="10.0">
                   </VBox>
                </content>
             </ScrollPane>

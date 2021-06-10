@@ -3,7 +3,7 @@ package model.actions;
 public abstract class Debuff {
     public int count;
     public boolean first = true;
-    public double chance;
+    public double chance = 0.5;
 
     public Debuff(int count, double chance) {
         this.count = count;
