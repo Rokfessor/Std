@@ -1,0 +1,112 @@
+-Что является входом для алгоритма поиска в глубину, что – выходом? 
+Входом является неориентированный граф G=<V, E>, заданный списками инцидентности
+Выходом - печать компонентов связности графа
+
+-Какова его вычислительная сложность?
+O(n + m)
+
+-Переносится ли поиск в глубину на ориентированные графы?
+Да, переносится
+
+
+Поису в глубину
+
+public void find (IncidenceList list) {
+    this.list = list;
+    set = new LinkedHashSet<>();
+    calc(list.getById(0));
+}
+
+private void calc(IncidenceList.Element e) {
+    while (e != null) {
+        if (!set.contains(e.getValue())) {
+            System.out.println(e.getValue());
+            set.add(e.getValue());
+            if (e.getNext() != null)
+                calc(list.get(e.getNext().getValue()));
+        }
+        e = e.getNext();
+    }
+}
+
+
+Списки инцидентности
+public class IncidenceList {
+    List<Element> list;
+
+    public IncidenceList() {
+        list = new ArrayList<>();
+    }
+
+    public Element get(int elem) {
+        for (Element e : list) {
+            if (e.value == elem) {
+                return e;
+            }
+        }
+        return null;
+    }
+
+    public Element getById(int id) {
+        if (id >= list.size())
+            throw new ArrayIndexOutOfBoundsException();
+
+        return list.get(id);
+    }
+
+    public boolean addTo(int elem, int val) {
+        for (Element e : list) {
+            if (e.value == elem) {
+                while (e.hasNext())
+                    e = e.next;
+
+                e.next = new Element(val);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean addNew(int val) {
+        for (Element e : list) {
+            if (e.value == val)
+                return false;
+        }
+        list.add(new Element(val));
+        return true;
+    }
+
+    public int size() {
+        return list.size();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Element e : list) {
+            while (e.hasNext()) {
+                sb.append(e.getValue()).append("->");
+                e = e.next;
+            }
+            sb.append(e.getValue()).append("->null\n");
+        }
+        return sb.toString();
+    }
+
+    public class Element {
+        @Getter
+        private final int value;
+
+        @Getter
+        private Element next;
+
+        private Element(int val) {
+            value = val;
+            next = null;
+        }
+
+        public boolean hasNext() {
+            return next != null;
+        }
+    }
+}

@@ -2,7 +2,6 @@ package Task1;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-
         for (int i = 0; i < 4; i++){
             long t = System.currentTimeMillis();
             Counter counter = Find.findWithThread(8, (int) Math.pow(2, i));

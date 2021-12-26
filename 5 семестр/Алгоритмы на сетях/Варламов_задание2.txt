@@ -1,0 +1,30 @@
+-Что является входом для алгоритма поиска кратчайшего пути на неориентированном связном графе, что – результатом работы? 
+Вход - Неориентированный граф G=<V, E>, заданный списками инцидентности ЗАПИСЬ[v], v  V, две выделенные вершины источник s и сток t
+Выход - Печать кратчайшего пути из s в t
+
+-Какова его вычислительная сложность?
+O(n + m)
+
+-Переносится ли поиск кратчайшего пути (и поиск в ширину) на ориентированные графы?
+Алгоритм поиска в ширину переносится на ориентированные графы
+
+public Queue<Integer> find(IncidenceList list) {
+    this.list = list;
+    queue = new LinkedList<>();
+    used = new ArrayList<>();
+    calc(list.getById(0));
+    return queue;
+}
+
+private void calc(IncidenceList.Element e) {
+    while (e != null) {
+        if (!used.contains(e.getValue())) {
+            used.add(e.getValue());
+            queue.add(e.getValue());
+        }
+        e = e.getNext();
+    }
+    System.err.println(queue.remove());
+    if (queue.size() != 0)
+        calc(list.get(queue.element()));
+}

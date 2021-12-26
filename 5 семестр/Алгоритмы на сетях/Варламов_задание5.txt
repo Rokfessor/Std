@@ -1,0 +1,40 @@
+-Можно ли применять алгоритма Форда-Беллмана для поиска кратчайших путей на неориентированных графах?
+Алгоритм Форда – Беллмана переносится на неориентированные графы только с неотрицательными весами.
+
+private static final int INF = 9999;
+
+private void bellmanFord(int graph[][], int src) {
+    int V = graph.length;
+    int[] dis = new int[V];
+    ArrayList<Integer> tmp = new ArrayList<>();
+
+    for (int i = 0; i < V; i++)
+        dis[i] = INF;
+
+    dis[src] = 0;
+
+    for (int k = 0; k < V - 1; k++) {
+        for (int i = 0; i < V; i++) {
+            for (int j = 0; j < V; j++) {
+                tmp.add(dis[j] + graph[j][i]);
+            }
+            dis[i] = tmp.stream().min(Integer::compare).get();
+            tmp.clear();
+        }
+    }
+
+    System.out.println("Vertex Distance from " + src);
+    for (int i = 0; i < V; i++)
+        System.out.println("to " + i + "\t\t" + dis[i]);
+}
+
+public void find() {
+    int graph[][] = {
+        {0, 1, 4, INF, INF},
+        {1, 0, 3, 2, 2},
+        {4, 3, 0, INF, INF},
+        {INF, 1, 5, 0, INF},
+        {INF, 2, INF, 3, 0}
+    };
+    bellmanFord(graph, 0);
+}

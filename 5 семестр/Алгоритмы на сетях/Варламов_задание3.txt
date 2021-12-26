@@ -1,0 +1,84 @@
+-Что является входом для алгоритма поиска Ф-циклов неориентированного связного графа, что – результатом работы? 
+Вход - Неориентированный связный граф G=<V, E>, представленный списками ЗАПИСЬ[v], v  V.
+Выход - Множество фундаментальных циклов Ф графа G.
+
+-Какова его вычислительная сложность?
+О(n + m)
+
+-Есть ли множество Ф-циклов у ориентированного графа?
+Да, у ориентированного графа есть множество Ф-циклов
+
+IncidenceList karkas;
+IncidenceList list;
+Queue<Integer> queue;
+List<Integer> used;
+
+public IncidenceList findKarkas(IncidenceList list) {
+    this.list = list;
+    karkas = new IncidenceList();
+    queue = new LinkedList<>();
+    used = new ArrayList<>();
+    used.add(list.getById(0).getValue());
+    calcKarkas(list.getById(0));
+    return karkas;
+}
+
+private void calcKarkas(IncidenceList.Element e) {
+    int p = e.getValue();
+    karkas.addNew(p);
+    while (e != null) {
+        if (!used.contains(e.getValue())) {
+            used.add(e.getValue());
+            queue.add(e.getValue());
+            karkas.addTo(p, e.getValue());
+        }
+        e = e.getNext();
+    }
+    System.err.println(queue.remove());
+    if (queue.size() != 0)
+        calcKarkas(list.get(queue.element()));
+}
+
+
+int d;
+int num;
+LinkedHashMap<Integer, Integer> DN;
+List<Integer> stack;
+
+public void findCycle(IncidenceList list) {
+    this.list = list;
+    stack = new ArrayList<>();
+    DN = new LinkedHashMap<>();
+    for (int i = 0; i < list.size(); i++) {
+        System.err.println(list.getById(i).getValue());
+        DN.put(list.getById(i).getValue(), 0);
+    }
+    System.err.println(DN);
+    num = 0;
+    d = 0;
+
+    for (int i = 0; i < list.size(); i++) {
+        IncidenceList.Element v = list.getById(i);
+        if (DN.get(v.getValue()) == 0)
+            cycle(v);
+    }
+
+}
+
+private void cycle(IncidenceList.Element v) {
+    d++;
+    stack.add(v.getValue());
+    num++;
+    DN.replace(v.getValue(), num);
+    IncidenceList.Element p = v;
+    v = v.getNext();
+    while (v != null) {
+        if (DN.get(v.getValue()) == 0)
+            cycle(v);
+        else if (v.getValue() != stack.get(d - 1) && DN.get(v.getValue()) < DN.get(p.getValue())) {
+            System.err.println(stack);
+        }
+        v = v.getNext();
+    }
+    d--;
+}
