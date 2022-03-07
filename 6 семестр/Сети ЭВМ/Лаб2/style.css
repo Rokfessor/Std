@@ -1,0 +1,25 @@
+.titled-button:hover::after {
+    content: attr(data-title); 
+}
+
+.rules {
+    text-shadow: 2px 2px 0px #F2A063,
+                 4px 4px 6px #F23123;;
+}
+
+.title {
+    font-size: 600%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    text-shadow:3px 3px 1px #51e058, 
+                6px 6px 2px #F2A063,
+                9px 9px 3px #F23123;;
+}
+
+.button-item {
+    margin: 0 5px;
+}
+
+.input-item {
+    margin: 10px 0;
+}
