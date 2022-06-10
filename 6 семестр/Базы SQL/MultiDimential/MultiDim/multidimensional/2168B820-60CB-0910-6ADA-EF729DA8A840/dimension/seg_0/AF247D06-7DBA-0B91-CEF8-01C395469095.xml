@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<Dimension class="oracle.dbtools.crest.model.design.multidimensional.Dimension" name="warehouse_dim" directorySegmentName="seg_0" id="AF247D06-7DBA-0B91-CEF8-01C395469095">
-<createdBy>maxim</createdBy>
-<createdTime>2022-06-09 01:59:40 UTC</createdTime>
-<ownerDesignName>MultiDim</ownerDesignName>
-<nameInOracleAW>WAREHOUSE_DIM</nameInOracleAW>
-</Dimension>

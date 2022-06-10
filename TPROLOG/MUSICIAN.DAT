@@ -1,0 +1,7 @@
+dpositive("has","more_than_one_member")
+dpositive("does","using_guitar")
+dpositive("does","using_drums")
+dpositive("does","relaxing_music")
+dpositive("has","mask")
+dnegative("does","agressive_music")
+dnegative("has","more_than_one_singer")

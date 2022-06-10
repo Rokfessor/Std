@@ -73,6 +73,17 @@
 <colAssociation fkAssociation="373C8607-86D7-6F61-CD2F-4C6DDB468A26" referredColumn="BF3CE2B0-92C0-047A-2ECA-046660C0B69C"/>
 </associations>
 </Column>
+<Column name="fileName" id="6D1B7EF2-01F0-78A2-70D5-2976925610DB">
+<createdBy>maxim</createdBy>
+<createdTime>2022-06-07 13:39:53 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="8D09D21E-D6B5-BF3C-8C05-AAFF9C05529B" name="Song_PK">

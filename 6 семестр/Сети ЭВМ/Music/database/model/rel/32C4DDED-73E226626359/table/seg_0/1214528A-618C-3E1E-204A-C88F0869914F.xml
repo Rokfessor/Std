@@ -80,18 +80,6 @@
 <ownDataTypeParameters>6,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="likedSongs" id="E3C2CECE-0A53-0F4D-F652-167378C266CC">
-<createdBy>maxim</createdBy>
-<createdTime>2022-06-02 23:56:37 UTC</createdTime>
-<generatorID>00DE2EF1-70B0-051B-A208-DB5EE6F0474A</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>47823B89-BECE-2D4A-B641-EE3BE6149078</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="393AD39A-5355-8E43-72EE-DB152304126E" name="User_PK">

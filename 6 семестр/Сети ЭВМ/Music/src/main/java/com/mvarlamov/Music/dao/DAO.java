@@ -1,2 +1,7 @@
-package com.mvarlamov.Music.dao;public class DAO {
+package com.mvarlamov.Music.dao;
+
+public interface DAO<T> {
+    T get();
+    void update(T data);
+    void delete(T data);
 }

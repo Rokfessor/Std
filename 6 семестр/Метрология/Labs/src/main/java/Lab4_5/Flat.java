@@ -1,4 +1,4 @@
-package Lab4;
+package Lab4_5;
 
 public class Flat implements Room {
     private final int roomsCount;

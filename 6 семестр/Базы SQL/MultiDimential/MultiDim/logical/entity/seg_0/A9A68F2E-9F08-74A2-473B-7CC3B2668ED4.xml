@@ -6,7 +6,7 @@
 <engineerTo>
 <item key="BBD84BF2-C673-D383-11E3-185EC28547A3" value="true"/>
 </engineerTo>
-<typeID>2</typeID>
+<typeID>1</typeID>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Game from '@/components/Game'
-import About from '@/components/About'
+import Game from '@/components/GameComponent'
+import About from '@/components/AboutComponent'
 
 const routes = [
   {

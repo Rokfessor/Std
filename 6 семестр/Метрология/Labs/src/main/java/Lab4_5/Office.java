@@ -1,4 +1,4 @@
-package Lab4;
+package Lab4_5;
 
 public class Office implements Room {
     private final int placesCount;
