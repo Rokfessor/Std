@@ -40,20 +40,6 @@
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id1" id="F3E28BA0-7CFF-6275-4677-D4C2E7FA1F40">
-<createdBy>maxim</createdBy>
-<createdTime>2022-06-03 00:00:50 UTC</createdTime>
-<generatorID>5F9202F3-FA55-592F-BC09-B5F82E1C385B</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="32C4DDED-942C-4EDC-C074-73E226626359" value="true"/>
-</engineerTo>
-<referedAttribute>C98E0407-DE94-2196-3200-BFADC07120D9</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="A5C67AC5-1E3D-CCE1-196B-0E87F01423D9" name="Album PK">
@@ -67,7 +53,6 @@
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>2E1F5184-6044-C51E-B798-2472739D7B92</attributeRef>
-<attributeRef>F3E28BA0-7CFF-6275-4677-D4C2E7FA1F40</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

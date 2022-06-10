@@ -8,17 +8,6 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="id" id="2DC96E3E-5A15-7AE2-3423-3043B99D426D">
-<createdBy>maxim</createdBy>
-<createdTime>2022-06-02 23:56:37 UTC</createdTime>
-<generatorID>680D44B9-89FD-A2D3-2CEA-2D4793FE43BC</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="login" id="5F7F3DFD-C76F-4011-1125-38E7B9028508">
 <createdBy>maxim</createdBy>
 <createdTime>2022-06-02 23:56:37 UTC</createdTime>
@@ -114,7 +103,6 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="2DC96E3E-5A15-7AE2-3423-3043B99D426D"/>
 <colUsage columnID="5F7F3DFD-C76F-4011-1125-38E7B9028508"/>
 </indexColumnUsage>
 </ind_PK_UK>

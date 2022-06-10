@@ -15,18 +15,6 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id" id="680D44B9-89FD-A2D3-2CEA-2D4793FE43BC">
-<createdBy>maxim</createdBy>
-<createdTime>2022-06-02 23:27:39 UTC</createdTime>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="32C4DDED-942C-4EDC-C074-73E226626359" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="login" id="13392B0C-8927-2A93-8055-765D9DBB771D">
 <createdBy>maxim</createdBy>
 <createdTime>2022-06-02 23:28:00 UTC</createdTime>
@@ -124,13 +112,11 @@
 <createdBy>maxim</createdBy>
 <createdTime>2022-06-02 23:27:53 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="32C4DDED-942C-4EDC-C074-73E226626359" value="false"/>
+<item key="32C4DDED-942C-4EDC-C074-73E226626359" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>680D44B9-89FD-A2D3-2CEA-2D4793FE43BC</attributeRef>
 <attributeRef>13392B0C-8927-2A93-8055-765D9DBB771D</attributeRef>
 </usedAttributes>
 </identifier>
