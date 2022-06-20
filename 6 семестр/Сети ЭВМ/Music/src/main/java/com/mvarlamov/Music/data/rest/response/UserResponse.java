@@ -7,11 +7,11 @@ import lombok.Getter;
 import java.util.List;
 
 @Getter
-public class UserDataResponse extends Response {
+public class UserResponse extends Response {
     private User user;
     private List<Song> songs;
 
-    public UserDataResponse(String message, boolean status, User user, List<Song> songs) {
+    public UserResponse(String message, boolean status, User user, List<Song> songs) {
         super(message, status);
         this.user = user;
         this.songs = songs;

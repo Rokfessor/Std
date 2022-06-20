@@ -1,17 +1,19 @@
-package com.mvarlamov.Music.dao;
+package com.mvarlamov.Music.data.dao;
 
-import com.mvarlamov.Music.Utils.Utils;
-import com.mvarlamov.Music.model.Artist;
+import com.mvarlamov.Music.data.model.Artist;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.lang.Nullable;
+import org.springframework.stereotype.Component;
 
-import javax.rmi.CORBA.Util;
+import java.net.URI;
 import java.util.List;
 
+@Component
 public class ArtistDAO {
     @Autowired
     JdbcTemplate template;
@@ -31,28 +33,33 @@ public class ArtistDAO {
 
     public List<Artist> getByName(String name) {
         return template.query(
-                "SELECT * FROM ARTIST WHERE NAME = ?",
+                "SELECT * FROM Artist WHERE Artist.name like ? OR Artist.name like ? OR Artist.name like ?",
                 artistRowMapper(),
-                name
+                String.format("%%%s%%", name),
+                String.format("%s%%", name),
+                String.format("%%%s", name)
         );
     }
 
-    public List<Artist> getAll() {
+    public List<Artist> getRandom(int max) {
         return template.query(
-                "SELECT * FROM ARTIST",
-                artistRowMapper()
+                "SELECT * FROM ARTIST WHERE ROWNUM <= ?",
+                artistRowMapper(),
+                max
         );
     }
 
     public void add(Artist artist) {
         template.update(
-                "INSERT INTO ARTIST(id, name, description, imageName) VALUES (?,?,?,?)",
-                artist.getId(),
+                "INSERT INTO ARTIST(name, description, imageName) VALUES (?,?,?)",
                 artist.getName(),
                 artist.getDescription(),
-                artist.getImagePath().toString()
+                artist.getImagePath() == null ? null : artist.getImagePath().toString()
         );
     }
+
+    @Value("${imagesPath}")
+    private String imagesPath;
 
     @Bean
     public RowMapper<Artist> artistRowMapper() {
@@ -60,6 +67,6 @@ public class ArtistDAO {
                 .setId(rs.getInt("id"))
                 .setName(rs.getString("name"))
                 .setDescription(rs.getString("description"))
-                .setImagePath(Utils.createImagePath(rs.getString("imageName")));
+                .setImagePath(URI.create(imagesPath + rs.getString("imageName")));
     }
 }

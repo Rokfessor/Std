@@ -1,4 +1,4 @@
-package com.mvarlamov.Music.model;
+package com.mvarlamov.Music.data.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -6,6 +6,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Session {
-    private String login;
+    private String userLogin;
     private String token;
 }

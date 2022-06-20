@@ -1,7 +1,6 @@
-package com.mvarlamov.Music.data.rest.responses;
+package com.mvarlamov.Music.data.rest.response;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.mvarlamov.Music.data.rest.responses;
+package com.mvarlamov.Music.data.rest.response;
 import lombok.Getter;
 
 @Getter

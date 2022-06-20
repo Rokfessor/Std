@@ -12,7 +12,7 @@
             </div>
             <div class="control-element">
                 Timer: {{ Math.floor(this.timer / 1000 / 60).toString().padStart(2, '0') }}:{{ Math.floor(this.timer /
-                1000).toString().padStart(2, '0')
+                        1000).toString().padStart(2, '0')
                 }}
             </div>
         </div>
@@ -111,16 +111,16 @@ export default {
             document.getElementById('game-container').style = 'background-image: linear-gradient(77deg, #000000 25%, #fff700 25%, #fff700 50%, #000000 50%, #000000 75%, #fff700 75%, #fff700 100%); background-size: 80.00px 346.52px;';
         }
         //КАВОО
-        /*         window.onkeyup = function (e) {
-                    console.log(e.keyCode)
-                    if (e.keyCode == 32) {
-                        if (!this.gameStarted)
-                        if (!this.gameStarted)
-                            this.startGame();
-                        else
-                            this.pause();
-                    }
-                } */
+        window.onkeyup = function (e) {
+            console.log(e.keyCode)
+            if (e.keyCode == 32) {
+                if (!this.gameStarted)
+                    if (!this.gameStarted)
+                        this.startGame();
+                    else
+                        this.pause();
+            }
+        }
     },
     created() {
         if (this.username == null || this.username === null) {
@@ -170,8 +170,8 @@ export default {
 .lead-board {
     position: absolute;
     left: 20%;
-    background: rgb(207,85,85);
-    background: linear-gradient(0deg, rgba(207,85,85,1) 0%, rgba(162,255,87,1) 100%);
+    background: rgb(207, 85, 85);
+    background: linear-gradient(0deg, rgba(207, 85, 85, 1) 0%, rgba(162, 255, 87, 1) 100%);
 }
 
 .area-score-container {
