@@ -1,6 +1,0 @@
-dnegative("has","more_than_one_member")
-dnegative("does","using_electronic_instruments")
-dnegative("does","sampling_other_music")
-dnegative("does","using_guitar")
-dnegative("does","using_drums")
-dnegative("does","lyrical_music_texts")

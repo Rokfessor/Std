@@ -1,1 +1,0 @@
-prolog.exe -e%1

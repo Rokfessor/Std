@@ -30,6 +30,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collections;
 
 @Configuration
@@ -62,6 +63,8 @@ public class Security{
             @Override
             protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
                 User user;
+
+                System.err.println(Arrays.toString(request.getCookies()));
 
                 String token = request.getHeader("Authorization");
                 if (!tokenIsValid(token))

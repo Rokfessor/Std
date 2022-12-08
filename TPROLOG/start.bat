@@ -1,3 +1,0 @@
-keyrus73\KEYRUS.COM
-PROLOG.EXE
-pause

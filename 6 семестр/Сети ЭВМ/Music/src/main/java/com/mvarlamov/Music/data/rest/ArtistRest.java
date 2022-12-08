@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
@@ -44,7 +45,11 @@ public class ArtistRest {
         artist.setSongs(songDAO.getArtistSongs(artist));
 
         return ResponseEntity
-                .ok(new ArtistResponse("Artist info", true, Stream.of(artist).collect(Collectors.toList())));
+                .ok(new ArtistResponse(
+                        "Artist info",
+                        true,
+                        Collections.singletonList(artist)
+                ));
     }
 
     @GetMapping("/artists")
