@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:lab2/complete_widget.dart';
 import 'example_buttons.dart';
 import 'example_candidate_model.dart';
 import 'example_card.dart';
@@ -38,21 +37,31 @@ class _ExamplePageState extends State<Example> {
   final AppinioSwiperController controller = AppinioSwiperController();
 
   List<QuestionCard> cards = [];
+  List<QuestionCard> cards_for_widget = [];
 
   @override
   void initState() {
-    _loadCards();
+    cards = _generateQuetionModels();
+    cards_for_widget = _generateQuetionModels();
     super.initState();
   }
 
-  void _loadCards() {
+  List<QuestionCard> _generateQuetionModels() {
+    List<QuestionCard> res = [];
+    int i = 0;
     for (QuestionModel candidate in questions) {
-      cards.add(
-        QuestionCard(
-          question: candidate,
-        ),
-      );
+      res.add(QuestionCard(question: candidate, onAnswer: _onAnswer, id: i));
+      ++i;
     }
+    return res;
+  }
+
+  void _onAnswer(int id, bool isRight) {
+    setState(() {
+      questions[id].answerStatus = isRight ? "T" : "F";
+      cards = _generateQuetionModels();
+      cards_for_widget = _generateQuetionModels();
+    });
   }
 
   @override
@@ -64,8 +73,22 @@ class _ExamplePageState extends State<Example> {
           const SizedBox(
             height: 50,
           ),
-          CompleteWidget(
-              count: cards.length
+          CupertinoPageScaffold(
+            backgroundColor: Colors.white,
+            child: Row(
+                children: List<Container>.generate(
+                    cards.length,
+                    (index) => Container(
+                        width: MediaQuery.of(context).size.width *
+                                (1 / cards.length) -
+                            10,
+                        height: 10,
+                        margin: const EdgeInsets.only(left: 5, right: 5),
+                        color: cards[index].question.answerStatus == "N"
+                            ? Colors.black26
+                            : cards[index].question.answerStatus == "T"
+                                ? Colors.green
+                                : Colors.red)).reversed.toList()),
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.85,
@@ -73,7 +96,7 @@ class _ExamplePageState extends State<Example> {
               unlimitedUnswipe: true,
               controller: controller,
               unswipe: _unswipe,
-              cards: cards,
+              cards: cards_for_widget,
               onSwipe: _swipe,
               padding: const EdgeInsets.only(
                 left: 10,
@@ -85,9 +108,7 @@ class _ExamplePageState extends State<Example> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              unswipeButton(controller)
-            ],
+            children: [unswipeButton(controller)],
           )
         ],
       ),
