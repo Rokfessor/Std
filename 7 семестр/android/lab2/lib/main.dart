@@ -1,10 +1,7 @@
-import 'dart:developer';
 import 'package:flutter/cupertino.dart';
-import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:flutter/material.dart';
-import 'example_buttons.dart';
-import 'example_candidate_model.dart';
-import 'example_card.dart';
+import 'package:lab2/quiz_page.dart';
+import 'package:pie_chart/pie_chart.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,113 +14,78 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(
-      debugShowCheckedModeBanner: false,
-      home: Example(),
-    );
+    return CupertinoApp(home: HomeScreen());
   }
 }
 
-class Example extends StatefulWidget {
-  const Example({
-    Key? key,
-  }) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  bool ended = false;
+  int right = 0;
+  int total = 0;
 
-  @override
-  State<Example> createState() => _ExamplePageState();
-}
-
-class _ExamplePageState extends State<Example> {
-  final AppinioSwiperController controller = AppinioSwiperController();
-
-  List<QuestionCard> cards = [];
-  List<QuestionCard> cards_for_widget = [];
-
-  @override
-  void initState() {
-    cards = _generateQuetionModels();
-    cards_for_widget = _generateQuetionModels();
-    super.initState();
-  }
-
-  List<QuestionCard> _generateQuetionModels() {
-    List<QuestionCard> res = [];
-    int i = 0;
-    for (QuestionModel candidate in questions) {
-      res.add(QuestionCard(question: candidate, onAnswer: _onAnswer, id: i));
-      ++i;
-    }
-    return res;
-  }
-
-  void _onAnswer(int id, bool isRight) {
-    setState(() {
-      questions[id].answerStatus = isRight ? "T" : "F";
-      cards = _generateQuetionModels();
-      cards_for_widget = _generateQuetionModels();
-    });
-  }
+  HomeScreen({super.key, this.ended = false, this.right = 0, this.total = 0});
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
-      child: Column(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(
-            height: 50,
-          ),
-          CupertinoPageScaffold(
-            backgroundColor: Colors.white,
-            child: Row(
-                children: List<Container>.generate(
-                    cards.length,
-                    (index) => Container(
-                        width: MediaQuery.of(context).size.width *
-                                (1 / cards.length) -
-                            10,
-                        height: 10,
-                        margin: const EdgeInsets.only(left: 5, right: 5),
-                        color: cards[index].question.answerStatus == "N"
-                            ? Colors.black26
-                            : cards[index].question.answerStatus == "T"
-                                ? Colors.green
-                                : Colors.red)).reversed.toList()),
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.85,
-            child: AppinioSwiper(
-              unlimitedUnswipe: true,
-              controller: controller,
-              unswipe: _unswipe,
-              cards: cards_for_widget,
-              onSwipe: _swipe,
-              padding: const EdgeInsets.only(
-                left: 10,
-                right: 10,
-                top: 10,
-                bottom: 40,
-              ),
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [unswipeButton(controller)],
-          )
+          Image.network(
+              "https://bcoensingen.ch/wp-content/uploads/2020/03/quiz-3.png"),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => new QuizWidget()));
+              },
+              child: const Text("Начать квиз!", style: TextStyle(
+                fontSize: 20
+              ))),
+          SizedBox(height: 20),
+          _chart()
         ],
       ),
     );
   }
 
-  void _swipe(int index, AppinioSwiperDirection direction) {
-    log("the card was swiped to the: " + direction.name);
-  }
+  TextEditingController textController = TextEditingController();
 
-  void _unswipe(bool unswiped) {
-    if (unswiped) {
-      log("SUCCESS: card was unswiped");
-    } else {
-      log("FAIL: no card left to unswipe");
+  Widget _chart() {
+    if (!ended) {
+      return Container(
+        child: TextField(
+          text
+        ),
+      );
     }
+
+    final dataMap = <String, double>{
+      "Right answers": right.toDouble(),
+    };
+
+    return Column(
+      children: [
+        PieChart(
+          dataMap: dataMap,
+          chartType: ChartType.disc,
+          chartRadius: 200,
+          legendOptions: const LegendOptions(showLegends: false),
+          baseChartColor: Colors.red,
+          colorList: const <Color>[
+            Colors.green,
+          ],
+          chartValuesOptions: const ChartValuesOptions(
+            showChartValuesInPercentage: true,
+          ),
+          totalValue: total.toDouble(),
+        ),
+        const Text("Результаты квиза", style: TextStyle(
+            fontSize: 20,
+            decorationStyle: TextDecorationStyle.double
+        )),
+      ],
+    );
   }
 }

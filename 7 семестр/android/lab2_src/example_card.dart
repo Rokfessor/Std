@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'example_candidate_model.dart';
 
 class QuestionCard extends StatelessWidget {
@@ -32,9 +35,6 @@ class QuestionCard extends StatelessWidget {
       alignment: Alignment.center,
       child: Column(
         children: [
-          SizedBox(
-            height: 10,
-          ),
           Flexible(
             child: Container(
                 decoration: const BoxDecoration(
@@ -61,30 +61,29 @@ class QuestionCard extends StatelessWidget {
                 bottomRight: Radius.circular(10),
               ),
             ),
-            child: Center(
-              child:
+            child: Row(
+              children: [
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Flexible(
-                      fit: FlexFit.loose,
-                      child: Text(
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 5,
-                        question.questionText,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                        ),
+                    Text(
+                      question.questionText,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
                       ),
                     ),
-                    Center(
-                      child: _generateBtns(question),
-                    )
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    _generateBtns(question)
                   ],
                 ),
+              ],
             ),
           ),
         ],
@@ -96,10 +95,18 @@ class QuestionCard extends StatelessWidget {
     bool answered = question.answerStatus != "N";
     return Column(
       children: [
-        _createBtn(answered, question.answers[0]),
-        _createBtn(answered, question.answers[1]),
-        _createBtn(answered, question.answers[2]),
-        _createBtn(answered, question.answers[3]),
+        Row(
+          children: [
+            _createBtn(answered, question.answers[0]),
+            _createBtn(answered, question.answers[1]),
+          ],
+        ),
+        Row(
+          children: [
+            _createBtn(answered, question.answers[2]),
+            _createBtn(answered, question.answers[3]),
+          ],
+        )
       ],
     );
   }
