@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<Scene xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.AppController">
+   <root>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <right>
+            <VBox alignment="TOP_CENTER" prefHeight="373.0" prefWidth="141.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="connectBtn" mnemonicParsing="false" onMouseClicked="#connect" text="Connect" />
+                  <Button fx:id="disconnectBtn" disable="true" layoutX="46.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#disconnect" text="Disconnect" />
+                  <Button onMouseClicked="#exit" mnemonicParsing="false" text="Exit" />
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+         </right>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Message text" />
+                  <TextField fx:id="messageTextField" disable="true" onKeyTyped="#messageChanged" />
+                  <HBox alignment="CENTER_LEFT" spacing="10.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="sendMessageBtn" disable="true" mnemonicParsing="false" onMouseClicked="#sendMessage" text="Send message" />
+                        <Separator prefHeight="7.0" prefWidth="85.0" visible="false" HBox.hgrow="NEVER" />
+                        <Label text="Exclusive access mode:" />
+                        <CheckBox fx:id="exclusiveMode" disable="true" mnemonicParsing="false" onMouseClicked="#modeChanged" />
+                     </children>
+                  </HBox>
+                  <Label text="Information" />
+                  <ScrollPane prefHeight="274.0" prefWidth="449.0">
+                     <content>
+                        <TextArea fx:id="infoTextArea" editable="false" prefHeight="233.0" prefWidth="447.0" wrapText="true" />
+                     </content>
+                  </ScrollPane>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </center>
+      </BorderPane>
+   </root>
+</Scene>

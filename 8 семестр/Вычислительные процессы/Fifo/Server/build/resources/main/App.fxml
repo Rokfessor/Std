@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<Scene xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.AppController">
+   <root>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#runServer" text="Run server" />
+                        <MenuItem mnemonicParsing="false" onAction="#stopServer" text="Stop server" />
+                        <MenuItem mnemonicParsing="false" onAction="#clearInfo" text="Clear info" />
+                        <MenuItem mnemonicParsing="false" text="Clear messages" />
+                        <MenuItem mnemonicParsing="false" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+                     </items></Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <right>
+            <VBox alignment="TOP_CENTER" prefHeight="373.0" prefWidth="134.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="runServerBtn" mnemonicParsing="false" onMouseClicked="#runServer" text="Run server" />
+                  <Button fx:id="stopServerBtn" disable="true" mnemonicParsing="false" onMouseClicked="#stopServer" text="Stop server" />
+                  <Button mnemonicParsing="false" onMouseClicked="#clearInfo" text="Clear info" />
+                  <Button layoutX="18.0" layoutY="92.0" mnemonicParsing="false" onMouseClicked="#clearMessages" text="Clear messages" />
+                  <Button mnemonicParsing="false" onMouseClicked="#exit" text="Exit" />
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+         </right>
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Messages" />
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <content>
+                              <TextArea fx:id="messagesTextArea" editable="false" prefHeight="352.0" prefWidth="230.0" wrapText="true" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Info" />
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <content>
+                              <TextArea fx:id="infoTextArea" editable="false" prefHeight="353.0" prefWidth="230.0" wrapText="true" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+   </root>
+</Scene>

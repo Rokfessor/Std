@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+
+<DialogPane onMouseClicked="#closeDialog" prefHeight="233.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="184.0" prefWidth="300.0">
+         <children>
+            <ImageView fitHeight="65.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@index.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="49.0" prefWidth="278.0" text="&quot;MemWacher&quot; allows you to lookup all using memory on any linux systems." textAlignment="CENTER" wrapText="true" />
+            <Label text=" This program is made by Maxim Varlamov." />
+            <Label text="© &quot;MemWatcher&quot; 2023-2023" />
+         </children>
+      </VBox>
+   </content>
+   <buttonTypes>
+      <ButtonType fx:constant="CANCEL" />
+   </buttonTypes>
+</DialogPane>

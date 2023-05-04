@@ -135,7 +135,7 @@ class _ImageEditorWidgetState extends State<ImageEditorWidget> {
       isLoading = true;
     });
 
-    final uri = Uri.http('192.168.125.50:8080', 'api/process_image', {'effect': settings.effectType});
+    final uri = Uri.http('192.168.206.123:8080', 'api/process_image', {'effect': settings.effectType});
     http.post(uri, body: settings.toString(), headers: {'Content-type': 'application/json'}).then((value) {
       String base64Img = jsonDecode(value.body)['image'].split(',')[1];
       setState(() {

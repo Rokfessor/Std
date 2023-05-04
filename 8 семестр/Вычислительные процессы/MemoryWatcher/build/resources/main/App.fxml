@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="720.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.AppController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#updateProcesses" text="Update processes" />
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+          </items>
+        </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#aboutProgram" text="About MemWatcher" />
+               </items>
+            </Menu>
+      </menus>
+    </MenuBar>
+      <HBox alignment="CENTER_LEFT" VBox.vgrow="NEVER">
+         <children>
+            <ChoiceBox fx:id="choiceBox" prefHeight="26.0" prefWidth="264.0">
+               <tooltip>
+                  <Tooltip text="Choose process to see memory usage" />
+               </tooltip></ChoiceBox>
+            <Separator prefHeight="0.0" prefWidth="156.0" visible="false" HBox.hgrow="ALWAYS" />
+            <Label prefHeight="18.0" prefWidth="113.0" text="Minimal address:" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="minAddress" onKeyTyped="#minAddressChanged">
+               <tooltip>
+                  <Tooltip text="Enter 64-bit minimal address for lookup. For example &quot;00007fafd66b0000&quot;" wrapText="true" />
+               </tooltip></TextField>
+            <Separator prefHeight="2.0" prefWidth="35.0" visible="false" />
+            <Label layoutX="160.0" layoutY="14.0" prefHeight="18.0" prefWidth="111.0" text="Maximal address:">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="maxAddress" layoutX="264.0" layoutY="10.0" onKeyTyped="#maxAddressChanged">
+               <tooltip>
+                  <Tooltip text="Enter 64-bit maximal address for lookup. For example &quot;ffffffffff600000&quot;" />
+               </tooltip></TextField>
+         </children>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </HBox>
+      <TableView fx:id="table" editable="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+          <placeholder>
+              <Label text="No such memory blocks" />
+          </placeholder>
+        <columns>
+          <TableColumn fx:id="addressCol" prefWidth="150.0">
+               <graphic>
+                  <Label text="Address">
+                     <tooltip>
+                        <Tooltip text="The beginning memory address allocation" />
+                     </tooltip>
+                  </Label>
+               </graphic></TableColumn>
+          <TableColumn fx:id="kbytesCol" minWidth="0.0" prefWidth="85.0">
+               <graphic>
+                  <Label text="KBytes">
+                     <tooltip>
+                        <Tooltip text="Memory allocation in kilobytes" />
+                     </tooltip>
+                  </Label>
+               </graphic></TableColumn>
+            <TableColumn fx:id="modeCol" prefWidth="140.0">
+               <graphic>
+                  <Label text="Mode">
+                     <tooltip>
+                        <Tooltip text="Access mode and privileges" />
+                     </tooltip>
+                  </Label>
+               </graphic></TableColumn>
+            <TableColumn fx:id="mappingCol" prefWidth="886.0">
+               <graphic>
+                  <Label text="Mapping">
+                     <tooltip>
+                        <Tooltip text="The user-facing name of the application or library" />
+                     </tooltip>
+                  </Label>
+               </graphic></TableColumn>
+        </columns>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </TableView>
+  </children>
+</VBox>
